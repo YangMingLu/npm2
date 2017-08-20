@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879; | Node.js API &#x6587;&#x6863;</title>
+  <link rel="stylesheet" href="api.css-20170605.css" tppabs="http://nodejs.cn/static/api.css?20170605">
+  <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+</head>
+<body class="alt apidoc" id="api-section-cli">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="javascript:if(confirm('http://nodejs.cn/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://nodejs.cn/'" tppabs="http://nodejs.cn/">
+          Node.js &#x4E2D;&#x6587;&#x7F51;
+        </a>
+        <div>
+          <input placeholder="API &#x5FEB;&#x901F;&#x641C;&#x7D22;" id="search_input">
+        </div>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="documentation.html" tppabs="http://nodejs.cn/api/documentation.html">&#x5173;&#x4E8E;&#x672C;&#x6587;&#x6863;</a></li>
+<li><a class="nav-synopsis" href="synopsis.html" tppabs="http://nodejs.cn/api/synopsis.html">&#x7528;&#x6CD5;&#x4E0E;&#x4F8B;&#x5B50;</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-assert" href="assert.html" tppabs="http://nodejs.cn/api/assert.html">Assert (&#x65AD;&#x8A00;)</a></li>
+<li><a class="nav-async_hooks" href="async_hooks.html" tppabs="http://nodejs.cn/api/async_hooks.html">Async Hooks (&#x5F02;&#x6B65;&#x94A9;)</a></li>
+<li><a class="nav-buffer" href="buffer.html" tppabs="http://nodejs.cn/api/buffer.html">Buffer (&#x7F13;&#x51B2;)</a></li>
+<li><a class="nav-child_process" href="child_process.html" tppabs="http://nodejs.cn/api/child_process.html">Child Processes (&#x5B50;&#x8FDB;&#x7A0B;)</a></li>
+<li><a class="nav-cluster" href="cluster.html" tppabs="http://nodejs.cn/api/cluster.html">Cluster (&#x96C6;&#x7FA4;)</a></li>
+<li><a class="nav-console" href="console.html" tppabs="http://nodejs.cn/api/console.html">Console (&#x63A7;&#x5236;&#x53F0;)</a></li>
+<li><a class="nav-crypto" href="crypto.html" tppabs="http://nodejs.cn/api/crypto.html">Crypto (&#x52A0;&#x5BC6;)</a></li>
+<li><a class="nav-dns" href="dns.html" tppabs="http://nodejs.cn/api/dns.html">DNS (&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;)</a></li>
+<li><a class="nav-domain" href="domain.html" tppabs="http://nodejs.cn/api/domain.html">Domain (&#x57DF;)</a></li>
+<li><a class="nav-errors" href="errors.html" tppabs="http://nodejs.cn/api/errors.html">Error (&#x9519;&#x8BEF;)</a></li>
+<li><a class="nav-events" href="events.html" tppabs="http://nodejs.cn/api/events.html">Events (&#x4E8B;&#x4EF6;)</a></li>
+<li><a class="nav-fs" href="fs.html" tppabs="http://nodejs.cn/api/fs.html">File System (&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;)</a></li>
+<li><a class="nav-globals" href="globals.html" tppabs="http://nodejs.cn/api/globals.html">Global (&#x5168;&#x5C40;&#x53D8;&#x91CF;)</a></li>
+<li><a class="nav-http" href="http.html" tppabs="http://nodejs.cn/api/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https.html" tppabs="http://nodejs.cn/api/https.html">HTTPS</a></li>
+<li><a class="nav-inspector" href="inspector.html" tppabs="http://nodejs.cn/api/inspector.html">Inspector</a></li>
+<li><a class="nav-modules" href="modules.html" tppabs="http://nodejs.cn/api/modules.html">Module (&#x6A21;&#x5757;)</a></li>
+<li><a class="nav-net" href="net.html" tppabs="http://nodejs.cn/api/net.html">Net (&#x7F51;&#x7EDC;)</a></li>
+<li><a class="nav-os" href="os.html" tppabs="http://nodejs.cn/api/os.html">OS (&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;)</a></li>
+<li><a class="nav-path" href="path.html" tppabs="http://nodejs.cn/api/path.html">Path (&#x8DEF;&#x5F84;)</a></li>
+<li><a class="nav-process" href="process.html" tppabs="http://nodejs.cn/api/process.html">Process (&#x8FDB;&#x7A0B;)</a></li>
+<li><a class="nav-punycode" href="punycode.html" tppabs="http://nodejs.cn/api/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="querystring.html" tppabs="http://nodejs.cn/api/querystring.html">Query Strings (&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;)</a></li>
+<li><a class="nav-readline" href="readline.html" tppabs="http://nodejs.cn/api/readline.html">Readline (&#x9010;&#x884C;&#x8BFB;&#x53D6;)</a></li>
+<li><a class="nav-repl" href="repl.html" tppabs="http://nodejs.cn/api/repl.html">REPL (&#x4EA4;&#x4E92;&#x5F0F;&#x89E3;&#x91CA;&#x5668;)</a></li>
+<li><a class="nav-stream" href="stream.html" tppabs="http://nodejs.cn/api/stream.html">Stream (&#x6D41;)</a></li>
+<li><a class="nav-string_decoder" href="string_decoder.html" tppabs="http://nodejs.cn/api/string_decoder.html">String Decoder (&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;&#x5668;)</a></li>
+<li><a class="nav-timers" href="timers.html" tppabs="http://nodejs.cn/api/timers.html">Timer (&#x5B9A;&#x65F6;&#x5668;)</a></li>
+<li><a class="nav-tls" href="tls.html" tppabs="http://nodejs.cn/api/tls.html">TLS (&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5C42;)</a></li>
+<li><a class="nav-tty" href="tty.html" tppabs="http://nodejs.cn/api/tty.html">TTY (&#x7EC8;&#x7AEF;)</a></li>
+<li><a class="nav-dgram" href="dgram.html" tppabs="http://nodejs.cn/api/dgram.html">UDP/Datagram (&#x6570;&#x636E;&#x62A5;)</a></li>
+<li><a class="nav-url" href="url.html" tppabs="http://nodejs.cn/api/url.html">URL</a></li>
+<li><a class="nav-util" href="util.html" tppabs="http://nodejs.cn/api/util.html">Util (&#x5B9E;&#x7528;&#x5DE5;&#x5177;)</a></li>
+<li><a class="nav-v8" href="v8.html" tppabs="http://nodejs.cn/api/v8.html">V8</a></li>
+<li><a class="nav-vm" href="vm.html" tppabs="http://nodejs.cn/api/vm.html">VM (&#x865A;&#x62DF;&#x673A;)</a></li>
+<li><a class="nav-zlib" href="zlib.html" tppabs="http://nodejs.cn/api/zlib.html">ZLIB (&#x538B;&#x7F29;)</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-addons" href="addons.html" tppabs="http://nodejs.cn/api/addons.html">C++ &#x63D2;&#x4EF6;</a></li>
+<li><a class="nav-n-api" href="n-api.html" tppabs="http://nodejs.cn/api/n-api.html">N-API</a></li>
+<li><a class="nav-cli active" href="cli.html" tppabs="http://nodejs.cn/api/cli.html">&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;</a></li>
+<li><a class="nav-debugger" href="debugger.html" tppabs="http://nodejs.cn/api/debugger.html">debugger &#x8C03;&#x8BD5;&#x5668;</a></li>
+<li><a class="nav-intl" href="intl.html" tppabs="http://nodejs.cn/api/intl.html">&#x56FD;&#x9645;&#x5316;</a></li>
+<li><a class="nav-tracing" href="tracing.html" tppabs="http://nodejs.cn/api/tracing.html">&#x8DDF;&#x8E2A;</a></li>
+<li><a class="nav-deprecations" href="deprecations.html" tppabs="http://nodejs.cn/api/deprecations.html">&#x5E9F;&#x5F03;&#x7684; API</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="cli" class="interior">
+      <header>
+        <h1>Node.js v8.2.1 &#x6587;&#x6863;</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.htm" tppabs="http://nodejs.cn/api/" name="toc">&#x8FD4;&#x56DE;&#x6587;&#x6863;&#x9996;&#x9875;</a>
+            <!--<a href="/api/all.html">ÂçïÈ°µÈù¢ÊòæÁ§∫</a> |-->
+            <!--<a href="/api/cli.json">JSONÊ†ºÂºè</a> |-->
+            <!--<a href="/api/en/cli.html">Êü•ÁúãËã±ÊñáÁâà</a>-->
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>&#x76EE;&#x5F55;</h2>
+        <ul>
+<li><span class="stability_undefined"><a href="#cli_command_line_options">&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;</a></span><ul>
+<li><span class="stability_undefined"><a href="#cli_synopsis">&#x6982;&#x8981;</a></span></li>
+<li><span class="stability_undefined"><a href="#cli_options">&#x9009;&#x9879;</a></span><ul>
+<li><span class="stability_undefined"><a href="#cli_v_version"><code>-v</code>, <code>--version</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_h_help"><code>-h</code>, <code>--help</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_e_eval_script"><code>-e</code>, <code>--eval &quot;script&quot;</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_p_print_script"><code>-p</code>, <code>--print &quot;script&quot;</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_c_check"><code>-c</code>, <code>--check</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_i_interactive"><code>-i</code>, <code>--interactive</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_r_require_module"><code>-r</code>, <code>--require module</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_inspect_host_port"><code>--inspect[=[host:]port]</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_inspect_brk_host_port"><code>--inspect-brk[=[host:]port]</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_inspect_port_host_port"><code>--inspect-port=[host:]port</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_no_deprecation"><code>--no-deprecation</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_trace_deprecation"><code>--trace-deprecation</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_throw_deprecation"><code>--throw-deprecation</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_pending_deprecation"><code>--pending-deprecation</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_no_warnings"><code>--no-warnings</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_napi_modules"><code>--napi-modules</code></a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#cli_abort_on_uncaught_exception"><code>--abort-on-uncaught-exception</code></a></span><ul>
+<li><span class="stability_undefined"><a href="#cli_trace_warnings"><code>--trace-warnings</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_redirect_warnings_file"><code>--redirect-warnings=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_trace_sync_io"><code>--trace-sync-io</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_trace_events_enabled"><code>--trace-events-enabled</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_trace_event_categories"><code>--trace-event-categories</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_zero_fill_buffers"><code>--zero-fill-buffers</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_preserve_symlinks"><code>--preserve-symlinks</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_track_heap_objects"><code>--track-heap-objects</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_prof_process"><code>--prof-process</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_v8_options"><code>--v8-options</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_tls_cipher_list_list"><code>--tls-cipher-list=list</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_enable_fips"><code>--enable-fips</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_force_fips"><code>--force-fips</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_openssl_config_file"><code>--openssl-config=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_use_openssl_ca_use_bundled_ca"><code>--use-openssl-ca</code>, <code>--use-bundled-ca</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_icu_data_dir_file"><code>--icu-data-dir=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli"><code>-</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_1"><code>--</code></a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#cli_environment_variables">&#x73AF;&#x5883;&#x53D8;&#x91CF;</a></span><ul>
+<li><span class="stability_undefined"><a href="#cli_node_debug_module"><code>NODE_DEBUG=module[,&#x2026;]</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_path_path"><code>NODE_PATH=path[:&#x2026;]</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_disable_colors_1"><code>NODE_DISABLE_COLORS=1</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_icu_data_file"><code>NODE_ICU_DATA=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_no_warnings_1"><code>NODE_NO_WARNINGS=1</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_options_options"><code>NODE_OPTIONS=options...</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_pending_deprecation_1"><code>NODE_PENDING_DEPRECATION=1</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_preserve_symlinks_1"><code>NODE_PRESERVE_SYMLINKS=1</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_repl_history_file"><code>NODE_REPL_HISTORY=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_extra_ca_certs_file"><code>NODE_EXTRA_CA_CERTS=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_openssl_conf_file"><code>OPENSSL_CONF=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_ssl_cert_dir_dir"><code>SSL_CERT_DIR=dir</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_ssl_cert_file_file"><code>SSL_CERT_FILE=file</code></a></span></li>
+<li><span class="stability_undefined"><a href="#cli_node_redirect_warnings_file"><code>NODE_REDIRECT_WARNINGS=file</code></a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;<span><a class="mark" href="#cli_command_line_options" id="cli_command_line_options">#</a></span></h1><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_command_line_options" tppabs="http://nodejs.cn/api/en/cli.html#cli_command_line_options">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/command_line_options.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/command_line_options.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/command_line_options.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<!--type=misc-->
+<p>Node.js &#x81EA;&#x5E26;&#x4E86;&#x5404;&#x79CD;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#x3002;
+&#x8FD9;&#x4E9B;&#x9009;&#x9879;&#x5F00;&#x653E;&#x4E86;&#x5185;&#x7F6E;&#x7684;&#x8C03;&#x8BD5;&#x3001;&#x6267;&#x884C;&#x811A;&#x672C;&#x7684;&#x591A;&#x79CD;&#x65B9;&#x5F0F;&#x3001;&#x4EE5;&#x53CA;&#x5176;&#x4ED6;&#x6709;&#x7528;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x8FD0;&#x884C; <code>man node</code> &#x53EF;&#x5728;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x4E2D;&#x67E5;&#x770B;&#x64CD;&#x4F5C;&#x624B;&#x518C;&#x3002;</p>
+<h2>&#x6982;&#x8981;<span><a class="mark" href="#cli_synopsis" id="cli_synopsis">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_synopsis" tppabs="http://nodejs.cn/api/en/cli.html#cli_synopsis">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/synopsis.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/synopsis.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/synopsis.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p><code>node [options] [v8 options] [script.js | -e &quot;script&quot; | -] [--] [arguments]</code></p>
+<p><code>node debug [script.js | -e &quot;script&quot; | &lt;host&gt;:&lt;port&gt;] &#x2026;</code></p>
+<p><code>node --v8-options</code></p>
+<p>&#x6267;&#x884C;&#x65F6;&#x4E0D;&#x5E26;&#x53C2;&#x6570;&#xFF0C;&#x4F1A;&#x542F;&#x52A8; <a href="repl.html" tppabs="http://nodejs.cn/api/repl.html">REPL</a>&#x3002;</p>
+<p>&#x5173;&#x4E8E; <code>node debug</code> &#x7684;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BE6;&#x89C1;<a href="debugger.html" tppabs="http://nodejs.cn/api/debugger.html">&#x8C03;&#x8BD5;&#x5668;</a>&#x6587;&#x6863;&#x3002;</p>
+<h2>&#x9009;&#x9879;<span><a class="mark" href="#cli_options" id="cli_options">#</a></span></h2>
+<h3><code>-v</code>, <code>--version</code><span><a class="mark" href="#cli_v_version" id="cli_v_version">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_v_version" tppabs="http://nodejs.cn/api/en/cli.html#cli_v_version">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/v_version.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/v_version.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/v_version.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.3</span>
+</div><p>&#x6253;&#x5370; node &#x7684;&#x7248;&#x672C;&#x53F7;&#x3002;</p>
+<h3><code>-h</code>, <code>--help</code><span><a class="mark" href="#cli_h_help" id="cli_h_help">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_h_help" tppabs="http://nodejs.cn/api/en/cli.html#cli_h_help">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/h_help.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/h_help.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/h_help.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.3</span>
+</div><p>&#x6253;&#x5370; node &#x7684;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#x3002;
+&#x6B64;&#x9009;&#x9879;&#x7684;&#x8F93;&#x51FA;&#x4E0D;&#x5982;&#x672C;&#x6587;&#x6863;&#x8BE6;&#x7EC6;&#x3002;</p>
+<h3><code>-e</code>, <code>--eval &quot;script&quot;</code><span><a class="mark" href="#cli_e_eval_script" id="cli_e_eval_script">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_e_eval_script" tppabs="http://nodejs.cn/api/en/cli.html#cli_e_eval_script">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/e_eval_script.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/e_eval_script.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/e_eval_script.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<details class="changelog"><summary>&#x7248;&#x672C;&#x5386;&#x53F2;</summary>
+<table>
+<tr><th>&#x7248;&#x672C;</th><th>&#x53D8;&#x66F4;</th></tr>
+<tr><td>v5.11.0</td>
+<td><p>Built-in libraries are now available as predefined variables.</p>
+</td></tr>
+<tr><td>v0.5.2</td>
+<td><p><span>&#x65B0;&#x589E;&#x4E8E;: v0.5.2</span></p>
+</td></tr>
+</table>
+</details>
+</div><p>&#x628A;&#x8DDF;&#x968F;&#x7684;&#x53C2;&#x6570;&#x4F5C;&#x4E3A; JavaScript &#x6765;&#x6267;&#x884C;&#x3002;
+&#x5728; REPL &#x4E2D;&#x9884;&#x5B9A;&#x4E49;&#x7684;&#x6A21;&#x5757;&#x4E5F;&#x53EF;&#x4EE5;&#x5728; <code>script</code> &#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
+<h3><code>-p</code>, <code>--print &quot;script&quot;</code><span><a class="mark" href="#cli_p_print_script" id="cli_p_print_script">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_p_print_script" tppabs="http://nodejs.cn/api/en/cli.html#cli_p_print_script">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/p_print_script.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/p_print_script.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/p_print_script.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<details class="changelog"><summary>&#x7248;&#x672C;&#x5386;&#x53F2;</summary>
+<table>
+<tr><th>&#x7248;&#x672C;</th><th>&#x53D8;&#x66F4;</th></tr>
+<tr><td>v5.11.0</td>
+<td><p>Built-in libraries are now available as predefined variables.</p>
+</td></tr>
+<tr><td>v0.6.4</td>
+<td><p><span>&#x65B0;&#x589E;&#x4E8E;: v0.6.4</span></p>
+</td></tr>
+</table>
+</details>
+</div><p>&#x4E0E; <code>-e</code> &#x76F8;&#x540C;&#xFF0C;&#x4F46;&#x4F1A;&#x6253;&#x5370;&#x7ED3;&#x679C;&#x3002;</p>
+<h3><code>-c</code>, <code>--check</code><span><a class="mark" href="#cli_c_check" id="cli_c_check">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_c_check" tppabs="http://nodejs.cn/api/en/cli.html#cli_c_check">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/c_check.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/c_check.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/c_check.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v5.0.0, v4.2.0</span>
+</div><p>&#x5728;&#x4E0D;&#x6267;&#x884C;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5BF9;&#x811A;&#x672C;&#x8FDB;&#x884C;&#x8BED;&#x6CD5;&#x68C0;&#x67E5;&#x3002;</p>
+<h3><code>-i</code>, <code>--interactive</code><span><a class="mark" href="#cli_i_interactive" id="cli_i_interactive">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_i_interactive" tppabs="http://nodejs.cn/api/en/cli.html#cli_i_interactive">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/i_interactive.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/i_interactive.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/i_interactive.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.7.7</span>
+</div><p>&#x6253;&#x5F00; REPL&#xFF0C;&#x5373;&#x4F7F; stdin &#x770B;&#x8D77;&#x6765;&#x4E0D;&#x50CF;&#x7EC8;&#x7AEF;&#x3002;</p>
+<h3><code>-r</code>, <code>--require module</code><span><a class="mark" href="#cli_r_require_module" id="cli_r_require_module">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_r_require_module" tppabs="http://nodejs.cn/api/en/cli.html#cli_r_require_module">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/r_require_module.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/r_require_module.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/r_require_module.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v1.6.0</span>
+</div><p>&#x5728;&#x542F;&#x52A8;&#x65F6;&#x9884;&#x52A0;&#x8F7D;&#x6307;&#x5B9A;&#x7684;&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x9075;&#x5FAA; <code>require()</code> &#x7684;&#x6A21;&#x5757;&#x89E3;&#x6790;&#x89C4;&#x5219;&#x3002;
+<code>module</code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x6216;&#x4E00;&#x4E2A; node &#x6A21;&#x5757;&#x540D;&#x79F0;&#x3002;</p>
+<h3><code>--inspect[=[host:]port]</code><span><a class="mark" href="#cli_inspect_host_port" id="cli_inspect_host_port">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_inspect_host_port" tppabs="http://nodejs.cn/api/en/cli.html#cli_inspect_host_port">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_host_port.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_host_port.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_host_port.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.3.0</span>
+</div><p>Activate inspector on host:port. Default is 127.0.0.1:9229.</p>
+<p>V8 inspector integration allows tools such as Chrome DevTools and IDEs to debug
+and profile Node.js instances. The tools attach to Node.js instances via a
+tcp port and communicate using the <a href="javascript:if(confirm('https://chromedevtools.github.io/debugger-protocol-viewer  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://chromedevtools.github.io/debugger-protocol-viewer'" tppabs="https://chromedevtools.github.io/debugger-protocol-viewer">Chrome Debugging Protocol</a>.</p>
+<h3><code>--inspect-brk[=[host:]port]</code><span><a class="mark" href="#cli_inspect_brk_host_port" id="cli_inspect_brk_host_port">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_inspect_brk_host_port" tppabs="http://nodejs.cn/api/en/cli.html#cli_inspect_brk_host_port">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_brk_host_port.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_brk_host_port.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_brk_host_port.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.6.0</span>
+</div><p>Activate inspector on host:port and break at start of user script.
+Default host:port is 127.0.0.1:9229.</p>
+<h3><code>--inspect-port=[host:]port</code><span><a class="mark" href="#cli_inspect_port_host_port" id="cli_inspect_port_host_port">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_inspect_port_host_port" tppabs="http://nodejs.cn/api/en/cli.html#cli_inspect_port_host_port">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_port_host_port.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_port_host_port.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/inspect_port_host_port.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.6.0</span>
+</div><p>Set the host:port to be used when the inspector is activated.
+Useful when activating the inspector by sending the <code>SIGUSR1</code> signal.</p>
+<p>Default host is 127.0.0.1.</p>
+<h3><code>--no-deprecation</code><span><a class="mark" href="#cli_no_deprecation" id="cli_no_deprecation">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_no_deprecation" tppabs="http://nodejs.cn/api/en/cli.html#cli_no_deprecation">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/no_deprecation.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/no_deprecation.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/no_deprecation.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.8.0</span>
+</div><p>&#x9759;&#x9ED8;&#x5E9F;&#x5F03;&#x7684;&#x8B66;&#x544A;&#x3002;</p>
+<h3><code>--trace-deprecation</code><span><a class="mark" href="#cli_trace_deprecation" id="cli_trace_deprecation">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_trace_deprecation" tppabs="http://nodejs.cn/api/en/cli.html#cli_trace_deprecation">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_deprecation.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_deprecation.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_deprecation.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.8.0</span>
+</div><p>&#x6253;&#x5370;&#x5E9F;&#x5F03;&#x7684;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x3002;</p>
+<h3><code>--throw-deprecation</code><span><a class="mark" href="#cli_throw_deprecation" id="cli_throw_deprecation">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_throw_deprecation" tppabs="http://nodejs.cn/api/en/cli.html#cli_throw_deprecation">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/throw_deprecation.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/throw_deprecation.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/throw_deprecation.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.11.14</span>
+</div><p>&#x629B;&#x51FA;&#x5E9F;&#x5F03;&#x7684;&#x9519;&#x8BEF;&#x3002;</p>
+<h3><code>--pending-deprecation</code><span><a class="mark" href="#cli_pending_deprecation" id="cli_pending_deprecation">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_pending_deprecation" tppabs="http://nodejs.cn/api/en/cli.html#cli_pending_deprecation">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/pending_deprecation.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/pending_deprecation.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/pending_deprecation.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p>Emit pending deprecation warnings.</p>
+<p><em>Note</em>: Pending deprecations are generally identical to a runtime deprecation
+with the notable exception that they are turned <em>off</em> by default and will not
+be emitted unless either the <code>--pending-deprecation</code> command line flag, or the
+<code>NODE_PENDING_DEPRECATION=1</code> environment variable, is set. Pending deprecations
+are used to provide a kind of selective &quot;early warning&quot; mechanism that
+developers may leverage to detect deprecated API usage.</p>
+<h3><code>--no-warnings</code><span><a class="mark" href="#cli_no_warnings" id="cli_no_warnings">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_no_warnings" tppabs="http://nodejs.cn/api/en/cli.html#cli_no_warnings">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/no_warnings.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/no_warnings.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/no_warnings.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.0.0</span>
+</div><p>&#x9759;&#x9ED8;&#x4E00;&#x5207;&#x8FDB;&#x7A0B;&#x8B66;&#x544A;&#xFF08;&#x5305;&#x62EC;&#x5E9F;&#x5F03;&#x8B66;&#x544A;&#xFF09;&#x3002;</p>
+<h3><code>--napi-modules</code><span><a class="mark" href="#cli_napi_modules" id="cli_napi_modules">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_napi_modules" tppabs="http://nodejs.cn/api/en/cli.html#cli_napi_modules">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/napi_modules.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/napi_modules.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/napi_modules.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p>Enable loading native modules compiled with the ABI-stable Node.js API (N-API)
+(experimental).</p>
+<h2><code>--abort-on-uncaught-exception</code><span><a class="mark" href="#cli_abort_on_uncaught_exception" id="cli_abort_on_uncaught_exception">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_abort_on_uncaught_exception" tppabs="http://nodejs.cn/api/en/cli.html#cli_abort_on_uncaught_exception">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/abort_on_uncaught_exception.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/abort_on_uncaught_exception.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/abort_on_uncaught_exception.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.10</span>
+</div><p>Aborting instead of exiting causes a core file to be generated for post-mortem
+analysis using a debugger (such as <code>lldb</code>, <code>gdb</code>, and <code>mdb</code>).</p>
+<h3><code>--trace-warnings</code><span><a class="mark" href="#cli_trace_warnings" id="cli_trace_warnings">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_trace_warnings" tppabs="http://nodejs.cn/api/en/cli.html#cli_trace_warnings">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_warnings.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_warnings.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_warnings.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.0.0</span>
+</div><p>&#x6253;&#x5370;&#x8FDB;&#x7A0B;&#x8B66;&#x544A;&#x7684;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#xFF08;&#x5305;&#x62EC;&#x5E9F;&#x5F03;&#x8B66;&#x544A;&#xFF09;&#x3002;</p>
+<h3><code>--redirect-warnings=file</code><span><a class="mark" href="#cli_redirect_warnings_file" id="cli_redirect_warnings_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_redirect_warnings_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_redirect_warnings_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/redirect_warnings_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/redirect_warnings_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/redirect_warnings_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p>Write process warnings to the given file instead of printing to stderr. The
+file will be created if it does not exist, and will be appended to if it does.
+If an error occurs while attempting to write the warning to the file, the
+warning will be written to stderr instead.</p>
+<h3><code>--trace-sync-io</code><span><a class="mark" href="#cli_trace_sync_io" id="cli_trace_sync_io">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_trace_sync_io" tppabs="http://nodejs.cn/api/en/cli.html#cli_trace_sync_io">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_sync_io.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_sync_io.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_sync_io.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v2.1.0</span>
+</div><p>&#x6BCF;&#x5F53;&#x4E8B;&#x4EF6;&#x5FAA;&#x73AF;&#x7684;&#x7B2C;&#x4E00;&#x5E27;&#x4E4B;&#x540E;&#x68C0;&#x6D4B;&#x5230;&#x540C;&#x6B65; I/O &#x65F6;&#xFF0C;&#x6253;&#x5370;&#x5806;&#x6808;&#x8DDF;&#x8E2A;&#x3002;</p>
+<h3><code>--trace-events-enabled</code><span><a class="mark" href="#cli_trace_events_enabled" id="cli_trace_events_enabled">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_trace_events_enabled" tppabs="http://nodejs.cn/api/en/cli.html#cli_trace_events_enabled">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_events_enabled.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_events_enabled.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_events_enabled.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.7.0</span>
+</div><p>Enables the collection of trace event tracing information.</p>
+<h3><code>--trace-event-categories</code><span><a class="mark" href="#cli_trace_event_categories" id="cli_trace_event_categories">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_trace_event_categories" tppabs="http://nodejs.cn/api/en/cli.html#cli_trace_event_categories">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_event_categories.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_event_categories.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/trace_event_categories.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.7.0</span>
+</div><p>A comma separated list of categories that should be traced when trace event
+tracing is enabled using <code>--trace-events-enabled</code>.</p>
+<h3><code>--zero-fill-buffers</code><span><a class="mark" href="#cli_zero_fill_buffers" id="cli_zero_fill_buffers">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_zero_fill_buffers" tppabs="http://nodejs.cn/api/en/cli.html#cli_zero_fill_buffers">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/zero_fill_buffers.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/zero_fill_buffers.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/zero_fill_buffers.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.0.0</span>
+</div><p>&#x81EA;&#x52A8;&#x7528; 0 &#x586B;&#x5145;&#x6240;&#x6709;&#x65B0;&#x5206;&#x914D;&#x7684; <a href="buffer.html#buffer_buffer" tppabs="http://nodejs.cn/api/buffer.html#buffer_buffer">Buffer</a> &#x548C; <a href="buffer.html#buffer_class_slowbuffer" tppabs="http://nodejs.cn/api/buffer.html#buffer_class_slowbuffer">SlowBuffer</a> &#x5B9E;&#x4F8B;&#x3002;</p>
+<h3><code>--preserve-symlinks</code><span><a class="mark" href="#cli_preserve_symlinks" id="cli_preserve_symlinks">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_preserve_symlinks" tppabs="http://nodejs.cn/api/en/cli.html#cli_preserve_symlinks">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/preserve_symlinks.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/preserve_symlinks.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/preserve_symlinks.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.3.0</span>
+</div><p>&#x5F53;&#x89E3;&#x6790;&#x548C;&#x7F13;&#x5B58;&#x6A21;&#x5757;&#x65F6;&#xFF0C;&#x547D;&#x4EE4;&#x6A21;&#x5757;&#x52A0;&#x8F7D;&#x5668;&#x4FDD;&#x6301;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53; Node.js &#x4ECE;&#x4E00;&#x4E2A;&#x88AB;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;&#x5230;&#x53E6;&#x4E00;&#x5757;&#x78C1;&#x76D8;&#x4F4D;&#x7F6E;&#x7684;&#x8DEF;&#x5F84;&#x52A0;&#x8F7D;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x65F6;&#xFF0C;Node.js &#x4F1A;&#x89E3;&#x5F15;&#x7528;&#x8BE5;&#x8FDE;&#x63A5;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x6A21;&#x5757;&#x7684;&#x771F;&#x5B9E;&#x78C1;&#x76D8;&#x7684;&#x5B9E;&#x9645;&#x8DEF;&#x5F84;&#xFF0C;&#x4F5C;&#x4E3A;&#x5B9A;&#x4F4D;&#x5176;&#x4ED6;&#x4F9D;&#x8D56;&#x6A21;&#x5757;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#x548C;&#x6839;&#x8DEF;&#x5F84;&#x3002;
+&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x662F;&#x53EF;&#x63A5;&#x53D7;&#x7684;&#x3002;
+&#x4F46;&#x662F;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;&#x7684;&#x540C;&#x884C;&#x4F9D;&#x8D56;&#xFF0C;&#x5982;&#x4E0B;&#x4F8B;&#x5B50;&#x6240;&#x63CF;&#x8FF0;&#x7684;&#xFF0C;&#x5982;&#x679C; <code>moduleA</code> &#x8BD5;&#x56FE;&#x5F15;&#x5165; <code>moduleB</code> &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x540C;&#x884C;&#x4F9D;&#x8D56;&#xFF0C;&#x9ED8;&#x8BA4;&#x884C;&#x4E3A;&#x5C31;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF1A;</p>
+<pre><code class="lang-text">{appDir}
+ &#x251C;&#x2500;&#x2500; app
+ &#x2502;   &#x251C;&#x2500;&#x2500; index.js
+ &#x2502;   &#x2514;&#x2500;&#x2500; node_modules
+ &#x2502;       &#x251C;&#x2500;&#x2500; moduleA -&gt; {appDir}/moduleA
+ &#x2502;       &#x2514;&#x2500;&#x2500; moduleB
+ &#x2502;           &#x251C;&#x2500;&#x2500; index.js
+ &#x2502;           &#x2514;&#x2500;&#x2500; package.json
+ &#x2514;&#x2500;&#x2500; moduleA
+     &#x251C;&#x2500;&#x2500; index.js
+     &#x2514;&#x2500;&#x2500; package.json
+</code></pre>
+<p><code>--preserve-symlinks</code> &#x547D;&#x4EE4;&#x884C;&#x6807;&#x5FD7;&#x547D;&#x4EE4; Node.js &#x4F7F;&#x7528;&#x6A21;&#x5757;&#x7684;&#x7B26;&#x53F7;&#x8DEF;&#x5F84;&#x800C;&#x4E0D;&#x662F;&#x771F;&#x5B9E;&#x8DEF;&#x5F84;&#xFF0C;&#x662F;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;&#x7684;&#x540C;&#x884C;&#x4F9D;&#x8D56;&#x80FD;&#x88AB;&#x627E;&#x5230;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x4F7F;&#x7528; <code>--preserve-symlinks</code> &#x4F1A;&#x6709;&#x5176;&#x4ED6;&#x65B9;&#x9762;&#x7684;&#x5F71;&#x54CD;&#x3002;
+&#x6BD4;&#x5982;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;&#x7684;&#x539F;&#x751F;&#x6A21;&#x5757;&#x5728;&#x4F9D;&#x8D56;&#x6811;&#x91CC;&#x6765;&#x81EA;&#x8D85;&#x8FC7;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x5B83;&#x4EEC;&#x4F1A;&#x52A0;&#x8F7D;&#x5931;&#x8D25;&#x3002;
+&#xFF08;Node.js &#x4F1A;&#x5C06;&#x5B83;&#x4EEC;&#x89C6;&#x4E3A;&#x4E24;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x6A21;&#x5757;&#xFF0C;&#x4E14;&#x4F1A;&#x8BD5;&#x56FE;&#x591A;&#x6B21;&#x52A0;&#x8F7D;&#x6A21;&#x5757;&#xFF0C;&#x9020;&#x6210;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x3002;&#xFF09;</p>
+<h3><code>--track-heap-objects</code><span><a class="mark" href="#cli_track_heap_objects" id="cli_track_heap_objects">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_track_heap_objects" tppabs="http://nodejs.cn/api/en/cli.html#cli_track_heap_objects">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/track_heap_objects.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/track_heap_objects.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/track_heap_objects.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v2.4.0</span>
+</div><p>&#x4E3A;&#x5806;&#x5FEB;&#x7167;&#x8FFD;&#x8E2A;&#x5806;&#x6808;&#x5BF9;&#x8C61;&#x7684;&#x5206;&#x914D;&#x3002;</p>
+<h3><code>--prof-process</code><span><a class="mark" href="#cli_prof_process" id="cli_prof_process">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_prof_process" tppabs="http://nodejs.cn/api/en/cli.html#cli_prof_process">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/prof_process.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/prof_process.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/prof_process.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v5.2.0</span>
+</div><p>&#x5904;&#x7406; v8 &#x5206;&#x6790;&#x5668;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528; v8 &#x9009;&#x9879; <code>--prof</code> &#x751F;&#x6210;&#x3002;</p>
+<h3><code>--v8-options</code><span><a class="mark" href="#cli_v8_options" id="cli_v8_options">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_v8_options" tppabs="http://nodejs.cn/api/en/cli.html#cli_v8_options">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/v8_options.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/v8_options.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/v8_options.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.3</span>
+</div><p>&#x6253;&#x5370; v8 &#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;V8 &#x9009;&#x9879;&#x5141;&#x8BB8;&#x5355;&#x8BCD;&#x4F7F;&#x7528;&#x7834;&#x6298;&#x53F7;&#xFF08;<code>-</code>&#xFF09;&#x6216;&#x4E0B;&#x5212;&#x7EBF;&#xFF08;<code>_</code>&#xFF09;&#x5206;&#x9694;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF0C;<code>--stack-trace-limit</code> &#x7B49;&#x540C;&#x4E8E; <code>--stack_trace_limit</code>&#x3002;</p>
+<h3><code>--tls-cipher-list=list</code><span><a class="mark" href="#cli_tls_cipher_list_list" id="cli_tls_cipher_list_list">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_tls_cipher_list_list" tppabs="http://nodejs.cn/api/en/cli.html#cli_tls_cipher_list_list">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/tls_cipher_list_list.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/tls_cipher_list_list.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/tls_cipher_list_list.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v4.0.0</span>
+</div><p>&#x6307;&#x5B9A;&#x5907;&#x7528;&#x7684;&#x9ED8;&#x8BA4; TLS &#x52A0;&#x5BC6;&#x5217;&#x8868;&#x3002;
+&#xFF08;&#x9700;&#x8981; Node.js &#x88AB;&#x6784;&#x5EFA;&#x4E3A;&#x652F;&#x6301;&#x52A0;&#x5BC6;&#x3002;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#xFF09;</p>
+<h3><code>--enable-fips</code><span><a class="mark" href="#cli_enable_fips" id="cli_enable_fips">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_enable_fips" tppabs="http://nodejs.cn/api/en/cli.html#cli_enable_fips">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/enable_fips.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/enable_fips.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/enable_fips.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.0.0</span>
+</div><p>&#x542F;&#x52A8;&#x65F6;&#x542F;&#x7528;&#x7B26;&#x5408; FIPS &#x6807;&#x51C6;&#x7684;&#x52A0;&#x5BC6;&#x3002;
+&#xFF08;&#x9700;&#x8981; Node.js &#x4F7F;&#x7528; <code>./configure --openssl-fips</code> &#x6784;&#x5EFA;&#xFF09;</p>
+<h3><code>--force-fips</code><span><a class="mark" href="#cli_force_fips" id="cli_force_fips">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_force_fips" tppabs="http://nodejs.cn/api/en/cli.html#cli_force_fips">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/force_fips.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/force_fips.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/force_fips.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.0.0</span>
+</div><p>&#x542F;&#x52A8;&#x65F6;&#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x7B26;&#x5408; FIPS &#x6807;&#x51C6;&#x7684;&#x52A0;&#x5BC6;&#x3002;
+&#xFF08;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x4EE3;&#x7801;&#x7981;&#x7528;&#x3002;&#xFF09;
+&#xFF08;&#x8981;&#x6C42;&#x540C; <code>--enable-fips</code>&#xFF09;</p>
+<h3><code>--openssl-config=file</code><span><a class="mark" href="#cli_openssl_config_file" id="cli_openssl_config_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_openssl_config_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_openssl_config_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/openssl_config_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/openssl_config_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/openssl_config_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.9.0</span>
+</div><p>&#x542F;&#x52A8;&#x65F6;&#x52A0;&#x8F7D; OpenSSL &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;
+&#x5728;&#x5176;&#x4ED6;&#x7528;&#x9014;&#x4E2D;&#xFF0C;&#x5982;&#x679C; Node.js &#x4F7F;&#x7528; <code>./configure --openssl-fips</code> &#x6784;&#x5EFA;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x542F;&#x7528;&#x7B26;&#x5408; FIPS &#x6807;&#x51C6;&#x7684;&#x52A0;&#x5BC6;&#x3002;</p>
+<h3><code>--use-openssl-ca</code>, <code>--use-bundled-ca</code><span><a class="mark" href="#cli_use_openssl_ca_use_bundled_ca" id="cli_use_openssl_ca_use_bundled_ca">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_use_openssl_ca_use_bundled_ca" tppabs="http://nodejs.cn/api/en/cli.html#cli_use_openssl_ca_use_bundled_ca">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/use_openssl_ca_use_bundled_ca.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/use_openssl_ca_use_bundled_ca.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/use_openssl_ca_use_bundled_ca.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.5.0</span>
+</div><p>Use OpenSSL&apos;s default CA store or use bundled Mozilla CA store as supplied by
+current NodeJS version. The default store is selectable at build-time.</p>
+<p>Using OpenSSL store allows for external modifications of the store. For most
+Linux and BSD distributions, this store is maintained by the distribution
+maintainers and system administrators. OpenSSL CA store location is dependent on
+configuration of the OpenSSL library but this can be altered at runtime using
+environmental variables.</p>
+<p>The bundled CA store, as supplied by NodeJS, is a snapshot of Mozilla CA store
+that is fixed at release time. It is identical on all supported platforms.</p>
+<p>See <code>SSL_CERT_DIR</code> and <code>SSL_CERT_FILE</code>.</p>
+<h3><code>--icu-data-dir=file</code><span><a class="mark" href="#cli_icu_data_dir_file" id="cli_icu_data_dir_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_icu_data_dir_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_icu_data_dir_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/icu_data_dir_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/icu_data_dir_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/icu_data_dir_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.11.15</span>
+</div><p>&#x6307;&#x5B9A; ICU &#x6570;&#x636E;&#x7684;&#x52A0;&#x8F7D;&#x8DEF;&#x5F84;&#x3002;
+&#xFF08;&#x8986;&#x76D6; <code>NODE_ICU_DATA</code>&#xFF09;</p>
+<h3><code>-</code><span><a class="mark" href="#cli" id="cli">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli" tppabs="http://nodejs.cn/api/en/cli.html#cli">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/#cli.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/#cli.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p>Alias for stdin, analogous to the use of - in other command line utilities,
+meaning that the script will be read from stdin, and the rest of the options
+are passed to that script.</p>
+<h3><code>--</code><span><a class="mark" href="#cli_1" id="cli_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_1" tppabs="http://nodejs.cn/api/en/cli.html#cli_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.5.0</span>
+</div><p>Indicate the end of node options. Pass the rest of the arguments to the script.
+If no script filename or eval/print script is supplied prior to this, then
+the next argument will be used as a script filename.</p>
+<h2>&#x73AF;&#x5883;&#x53D8;&#x91CF;<span><a class="mark" href="#cli_environment_variables" id="cli_environment_variables">#</a></span></h2>
+<h3><code>NODE_DEBUG=module[,&#x2026;]</code><span><a class="mark" href="#cli_node_debug_module" id="cli_node_debug_module">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_debug_module" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_debug_module">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_debug_module.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_debug_module.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_debug_module.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.32</span>
+</div><p>&#x4EE5; <code>&apos;,&apos;</code> &#x5206;&#x9694;&#x7684;&#x5E94;&#x8BE5;&#x6253;&#x5370;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x7684;&#x6838;&#x5FC3;&#x6A21;&#x5757;&#x5217;&#x8868;&#x3002;</p>
+<h3><code>NODE_PATH=path[:&#x2026;]</code><span><a class="mark" href="#cli_node_path_path" id="cli_node_path_path">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_path_path" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_path_path">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_path_path.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_path_path.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_path_path.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.32</span>
+</div><p>&#x4EE5; <code>&apos;:&apos;</code> &#x5206;&#x9694;&#x7684;&#x6709;&#x6A21;&#x5757;&#x641C;&#x7D22;&#x8DEF;&#x5F84;&#x4F5C;&#x524D;&#x7F00;&#x7684;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5728; Windows &#x4E2D;&#xFF0C;&#x5217;&#x8868;&#x662F;&#x7528; <code>&apos;;&apos;</code> &#x5206;&#x9694;&#x7684;&#x3002;</p>
+<h3><code>NODE_DISABLE_COLORS=1</code><span><a class="mark" href="#cli_node_disable_colors_1" id="cli_node_disable_colors_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_disable_colors_1" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_disable_colors_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_disable_colors_1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_disable_colors_1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_disable_colors_1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.0</span>
+</div><p>&#x5F53;&#x8BBE;&#x4E3A; <code>1</code> &#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5728; REPL &#x4E2D;&#x4F7F;&#x7528;&#x989C;&#x8272;&#x3002;</p>
+<h3><code>NODE_ICU_DATA=file</code><span><a class="mark" href="#cli_node_icu_data_file" id="cli_node_icu_data_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_icu_data_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_icu_data_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_icu_data_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_icu_data_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_icu_data_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.11.15</span>
+</div><p>ICU&#xFF08;Intl &#x5BF9;&#x8C61;&#xFF09;&#x6570;&#x636E;&#x7684;&#x6570;&#x636E;&#x8DEF;&#x5F84;&#x3002;
+&#x5F53;&#x4F7F;&#x7528; <code>small-icu</code> &#x7F16;&#x8BD1;&#x65F6;&#xFF0C;&#x6269;&#x5C55;&#x94FE;&#x63A5;&#x7684;&#x6570;&#x636E;&#x3002;</p>
+<h3><code>NODE_NO_WARNINGS=1</code><span><a class="mark" href="#cli_node_no_warnings_1" id="cli_node_no_warnings_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_no_warnings_1" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_no_warnings_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_no_warnings_1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_no_warnings_1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_no_warnings_1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.5.0</span>
+</div><p>When set to <code>1</code>, process warnings are silenced.</p>
+<h3><code>NODE_OPTIONS=options...</code><span><a class="mark" href="#cli_node_options_options" id="cli_node_options_options">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_options_options" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_options_options">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_options_options.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_options_options.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_options_options.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p><code>options...</code> are interpreted as if they had been specified on the command line
+before the actual command line (so they can be overridden).  Node will exit with
+an error if an option that is not allowed in the environment is used, such as
+<code>-p</code> or a script file.</p>
+<p>Node options that are allowed are:</p>
+<ul>
+<li><code>--enable-fips</code></li>
+<li><code>--force-fips</code></li>
+<li><code>--icu-data-dir</code></li>
+<li><code>--inspect-brk</code></li>
+<li><code>--inspect-port</code></li>
+<li><code>--inspect</code></li>
+<li><code>--napi-modules</code></li>
+<li><code>--no-deprecation</code></li>
+<li><code>--no-warnings</code></li>
+<li><code>--openssl-config</code></li>
+<li><code>--redirect-warnings</code></li>
+<li><code>--require</code>, <code>-r</code></li>
+<li><code>--throw-deprecation</code></li>
+<li><code>--tls-cipher-list</code></li>
+<li><code>--trace-deprecation</code></li>
+<li><code>--trace-events-categories</code></li>
+<li><code>--trace-events-enabled</code></li>
+<li><code>--trace-sync-io</code></li>
+<li><code>--trace-warnings</code></li>
+<li><code>--track-heap-objects</code></li>
+<li><code>--use-bundled-ca</code></li>
+<li><code>--use-openssl-ca</code></li>
+<li><code>--v8-pool-size</code></li>
+<li><code>--zero-fill-buffers</code></li>
+</ul>
+<p>V8 options that are allowed are:</p>
+<ul>
+<li><code>--abort-on-uncaught-exception</code></li>
+<li><code>--max-old-space-size</code></li>
+</ul>
+<h3><code>NODE_PENDING_DEPRECATION=1</code><span><a class="mark" href="#cli_node_pending_deprecation_1" id="cli_node_pending_deprecation_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_pending_deprecation_1" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_pending_deprecation_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_pending_deprecation_1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_pending_deprecation_1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_pending_deprecation_1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p>When set to <code>1</code>, emit pending deprecation warnings.</p>
+<p><em>Note</em>: Pending deprecations are generally identical to a runtime deprecation
+with the notable exception that they are turned <em>off</em> by default and will not
+be emitted unless either the <code>--pending-deprecation</code> command line flag, or the
+<code>NODE_PENDING_DEPRECATION=1</code> environment variable, is set. Pending deprecations
+are used to provide a kind of selective &quot;early warning&quot; mechanism that
+developers may leverage to detect deprecated API usage.</p>
+<h3><code>NODE_PRESERVE_SYMLINKS=1</code><span><a class="mark" href="#cli_node_preserve_symlinks_1" id="cli_node_preserve_symlinks_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_preserve_symlinks_1" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_preserve_symlinks_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_preserve_symlinks_1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_preserve_symlinks_1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_preserve_symlinks_1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.1.0</span>
+</div><p>When set to <code>1</code>, instructs the module loader to preserve symbolic links when
+resolving and caching modules.</p>
+<h3><code>NODE_REPL_HISTORY=file</code><span><a class="mark" href="#cli_node_repl_history_file" id="cli_node_repl_history_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_repl_history_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_repl_history_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_repl_history_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_repl_history_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_repl_history_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v3.0.0</span>
+</div><p>&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6301;&#x4E45;&#x6027;&#x7684; REPL &#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#x3002;
+&#x9ED8;&#x8BA4;&#x8DEF;&#x5F84;&#x662F; <code>~/.node_repl_history</code>&#xFF0C;&#x53EF;&#x88AB;&#x8BE5;&#x53D8;&#x91CF;&#x8986;&#x76D6;&#x3002;
+&#x5C06;&#x503C;&#x8BBE;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;<code>&quot;&quot;</code> &#x6216; <code>&quot; &quot;</code>&#xFF09;&#x4F1A;&#x7981;&#x7528;&#x6301;&#x4E45;&#x6027;&#x7684; REPL &#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x3002;</p>
+<h3><code>NODE_EXTRA_CA_CERTS=file</code><span><a class="mark" href="#cli_node_extra_ca_certs_file" id="cli_node_extra_ca_certs_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_extra_ca_certs_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_extra_ca_certs_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_extra_ca_certs_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_extra_ca_certs_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_extra_ca_certs_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.3.0</span>
+</div><p>&#x5F53;&#x8BBE;&#x7F6E;&#x4E86;&#x6B64;&#x9009;&#x9879;&#x65F6;&#xFF0C;&#x6839; CA &#x8BC1;&#x4E66;&#xFF08;&#x5982; VeriSign&#xFF09;&#x4F1A;&#x88AB; <code>file</code> &#x6307;&#x5B9A;&#x7684;&#x8BC1;&#x4E66;&#x6269;&#x5C55;&#x3002;
+&#x6587;&#x4EF6;&#x5E94;&#x8BE5;&#x5305;&#x62EC;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53EF;&#x4FE1;&#x7684; PEM &#x683C;&#x5F0F;&#x7684;&#x8BC1;&#x4E66;&#x3002;
+&#x5982;&#x679C;&#x6587;&#x4EF6;&#x4E22;&#x5931;&#x6216;&#x6709;&#x7F3A;&#x9677;&#xFF0C;&#x5219; <a href="process.html#process_process_emitwarning_warning_type_code_ctor" tppabs="http://nodejs.cn/api/process.html#process_process_emitwarning_warning_type_code_ctor"><code>process.emitWarning()</code></a> &#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x6D88;&#x606F;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A; TLS &#x6216; HTTPS &#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x6216;&#x670D;&#x52A1;&#x5668;&#x7684; <code>ca</code> &#x9009;&#x9879;&#x7684;&#x5C5E;&#x6027;&#x88AB;&#x663E;&#x5F0F;&#x5730;&#x6307;&#x5B9A;&#x65F6;&#xFF0C;&#x5219;&#x6307;&#x5B9A;&#x7684;&#x8BC1;&#x4E66;&#x4E0D;&#x4F1A;&#x88AB;&#x4F7F;&#x7528;&#x3002;</p>
+<h3><code>OPENSSL_CONF=file</code><span><a class="mark" href="#cli_openssl_conf_file" id="cli_openssl_conf_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_openssl_conf_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_openssl_conf_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/openssl_conf_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/openssl_conf_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/openssl_conf_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.7.0</span>
+</div><p>Load an OpenSSL configuration file on startup. Among other uses, this can be
+used to enable FIPS-compliant crypto if Node.js is built with <code>./configure
+--openssl-fips</code>.</p>
+<p>If the <a href="#cli_openssl_config_file"><code>--openssl-config</code></a> command line option is used, the environment
+variable is ignored.</p>
+<h3><code>SSL_CERT_DIR=dir</code><span><a class="mark" href="#cli_ssl_cert_dir_dir" id="cli_ssl_cert_dir_dir">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_ssl_cert_dir_dir" tppabs="http://nodejs.cn/api/en/cli.html#cli_ssl_cert_dir_dir">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/ssl_cert_dir_dir.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/ssl_cert_dir_dir.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/ssl_cert_dir_dir.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.7.0</span>
+</div><p>If <code>--use-openssl-ca</code> is enabled, this overrides and sets OpenSSL&apos;s directory
+containing trusted certificates.</p>
+<p><em>Note</em>: Be aware that unless the child environment is explicitly set, this
+evironment variable will be inherited by any child processes, and if they use
+OpenSSL, it may cause them to trust the same CAs as node.</p>
+<h3><code>SSL_CERT_FILE=file</code><span><a class="mark" href="#cli_ssl_cert_file_file" id="cli_ssl_cert_file_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_ssl_cert_file_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_ssl_cert_file_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/ssl_cert_file_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/ssl_cert_file_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/ssl_cert_file_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v7.7.0</span>
+</div><p>If <code>--use-openssl-ca</code> is enabled, this overrides and sets OpenSSL&apos;s file
+containing trusted certificates.</p>
+<p><em>Note</em>: Be aware that unless the child environment is explicitly set, this
+evironment variable will be inherited by any child processes, and if they use
+OpenSSL, it may cause them to trust the same CAs as node.</p>
+<h3><code>NODE_REDIRECT_WARNINGS=file</code><span><a class="mark" href="#cli_node_redirect_warnings_file" id="cli_node_redirect_warnings_file">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="cli-1.html#cli_node_redirect_warnings_file" tppabs="http://nodejs.cn/api/en/cli.html#cli_node_redirect_warnings_file">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/cli/node_redirect_warnings_file.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/cli/node_redirect_warnings_file.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/cli/node_redirect_warnings_file.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v8.0.0</span>
+</div><p>When set, process warnings will be emitted to the given file instead of
+printing to stderr. The file will be created if it does not exist, and will be
+appended to if it does. If an error occurs while attempting to write the
+warning to the file, the warning will be written to stderr instead. This is
+equivalent to using the <code>--redirect-warnings=file</code> command-line flag.</p>
+
+      </div>
+    </div>
+  </div>
+  <!-- ÊêúÁ¥¢ÂºπÁ™ó -->
+  <div id="modal_search_bg"></div>
+  <div id="modal_search">
+    <input placeholder="API &#x5FEB;&#x901F;&#x641C;&#x7D22;" id="modal_search_input">
+    <div id="modal_search_result"></div>
+  </div>
+  <!-- js -->
+  <!--[if lt IE 10]><script src="placeholders.js-20170426" tppabs="http://nodejs.cn/static/lib/placeholders.js?20170426"></script><![endif]-->
+  <script src="api.js-20170607" tppabs="http://nodejs.cn/static/api.js?20170607"></script>
+</body>
+</html>

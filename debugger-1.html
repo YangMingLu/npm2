@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>debugger | Node.js API &#x82F1;&#x6587;&#x6587;&#x6863;</title>
+  <link rel="stylesheet" href="api.css-20170605.css" tppabs="http://nodejs.cn/static/api.css?20170605">
+  <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+</head>
+<body class="alt apidoc lang_en" id="api-section-debugger">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="javascript:if(confirm('http://nodejs.cn/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://nodejs.cn/'" tppabs="http://nodejs.cn/">
+          Node.js &#x4E2D;&#x6587;&#x7F51;
+        </a>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="documentation-1.html" tppabs="http://nodejs.cn/api/en/documentation.html">About these Docs</a></li>
+<li><a class="nav-synopsis" href="synopsis-1.html" tppabs="http://nodejs.cn/api/en/synopsis.html">Usage &amp; Example</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-assert" href="assert-1.html" tppabs="http://nodejs.cn/api/en/assert.html">Assertion Testing</a></li>
+<li><a class="nav-async_hooks" href="async_hooks-1.html" tppabs="http://nodejs.cn/api/en/async_hooks.html">Async Hooks</a></li>
+<li><a class="nav-buffer" href="buffer-1.html" tppabs="http://nodejs.cn/api/en/buffer.html">Buffer</a></li>
+<li><a class="nav-addons" href="addons-1.html" tppabs="http://nodejs.cn/api/en/addons.html">C++ Addons</a></li>
+<li><a class="nav-n-api" href="n-api-1.html" tppabs="http://nodejs.cn/api/en/n-api.html">C/C++ Addons - N-API</a></li>
+<li><a class="nav-child_process" href="child_process-1.html" tppabs="http://nodejs.cn/api/en/child_process.html">Child Processes</a></li>
+<li><a class="nav-cluster" href="cluster-1.html" tppabs="http://nodejs.cn/api/en/cluster.html">Cluster</a></li>
+<li><a class="nav-cli" href="cli-1.html" tppabs="http://nodejs.cn/api/en/cli.html">Command Line Options</a></li>
+<li><a class="nav-console" href="console-1.html" tppabs="http://nodejs.cn/api/en/console.html">Console</a></li>
+<li><a class="nav-crypto" href="crypto-1.html" tppabs="http://nodejs.cn/api/en/crypto.html">Crypto</a></li>
+<li><a class="nav-debugger active" href="debugger-1.html" tppabs="http://nodejs.cn/api/en/debugger.html">Debugger</a></li>
+<li><a class="nav-deprecations" href="deprecations-1.html" tppabs="http://nodejs.cn/api/en/deprecations.html">Deprecated APIs</a></li>
+<li><a class="nav-dns" href="dns-1.html" tppabs="http://nodejs.cn/api/en/dns.html">DNS</a></li>
+<li><a class="nav-domain" href="domain-1.html" tppabs="http://nodejs.cn/api/en/domain.html">Domain</a></li>
+<li><a class="nav-errors" href="errors-1.html" tppabs="http://nodejs.cn/api/en/errors.html">Errors</a></li>
+<li><a class="nav-events" href="events-1.html" tppabs="http://nodejs.cn/api/en/events.html">Events</a></li>
+<li><a class="nav-fs" href="fs-1.html" tppabs="http://nodejs.cn/api/en/fs.html">File System</a></li>
+<li><a class="nav-globals" href="globals-1.html" tppabs="http://nodejs.cn/api/en/globals.html">Globals</a></li>
+<li><a class="nav-http" href="http-1.html" tppabs="http://nodejs.cn/api/en/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https-1.html" tppabs="http://nodejs.cn/api/en/https.html">HTTPS</a></li>
+<li><a class="nav-inspector" href="inspector-1.html" tppabs="http://nodejs.cn/api/en/inspector.html">Inspector</a></li>
+<li><a class="nav-intl" href="intl-1.html" tppabs="http://nodejs.cn/api/en/intl.html">Internationalization</a></li>
+<li><a class="nav-modules" href="modules-1.html" tppabs="http://nodejs.cn/api/en/modules.html">Modules</a></li>
+<li><a class="nav-net" href="net-1.html" tppabs="http://nodejs.cn/api/en/net.html">Net</a></li>
+<li><a class="nav-os" href="os-1.html" tppabs="http://nodejs.cn/api/en/os.html">OS</a></li>
+<li><a class="nav-path" href="path-1.html" tppabs="http://nodejs.cn/api/en/path.html">Path</a></li>
+<li><a class="nav-process" href="process-1.html" tppabs="http://nodejs.cn/api/en/process.html">Process</a></li>
+<li><a class="nav-punycode" href="punycode-1.html" tppabs="http://nodejs.cn/api/en/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="querystring-1.html" tppabs="http://nodejs.cn/api/en/querystring.html">Query Strings</a></li>
+<li><a class="nav-readline" href="readline-1.html" tppabs="http://nodejs.cn/api/en/readline.html">Readline</a></li>
+<li><a class="nav-repl" href="repl-1.html" tppabs="http://nodejs.cn/api/en/repl.html">REPL</a></li>
+<li><a class="nav-stream" href="stream-1.html" tppabs="http://nodejs.cn/api/en/stream.html">Stream</a></li>
+<li><a class="nav-string_decoder" href="string_decoder-1.html" tppabs="http://nodejs.cn/api/en/string_decoder.html">String Decoder</a></li>
+<li><a class="nav-timers" href="timers-1.html" tppabs="http://nodejs.cn/api/en/timers.html">Timers</a></li>
+<li><a class="nav-tls" href="tls-1.html" tppabs="http://nodejs.cn/api/en/tls.html">TLS/SSL</a></li>
+<li><a class="nav-tracing" href="tracing-1.html" tppabs="http://nodejs.cn/api/en/tracing.html">Tracing</a></li>
+<li><a class="nav-tty" href="tty-1.html" tppabs="http://nodejs.cn/api/en/tty.html">TTY</a></li>
+<li><a class="nav-dgram" href="dgram-1.html" tppabs="http://nodejs.cn/api/en/dgram.html">UDP/Datagram</a></li>
+<li><a class="nav-url" href="url-1.html" tppabs="http://nodejs.cn/api/en/url.html">URL</a></li>
+<li><a class="nav-util" href="util-1.html" tppabs="http://nodejs.cn/api/en/util.html">Utilities</a></li>
+<li><a class="nav-v8" href="v8-1.html" tppabs="http://nodejs.cn/api/en/v8.html">V8</a></li>
+<li><a class="nav-vm" href="vm-1.html" tppabs="http://nodejs.cn/api/en/vm.html">VM</a></li>
+<li><a class="nav-zlib" href="zlib-1.html" tppabs="http://nodejs.cn/api/en/zlib.html">ZLIB</a></li>
+</ul>
+<div class="line"></div>
+
+
+    </div>
+
+    <div id="column1" data-id="debugger" class="interior">
+      <header>
+        <h1>Node.js v8.2.1 &#x82F1;&#x6587;&#x6587;&#x6863;</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.html" tppabs="http://nodejs.cn/api/en/index.html" name="toc">&#x8FD4;&#x56DE;&#x6587;&#x6863;&#x9996;&#x9875;</a> |
+            <!--<a href="all.html">View on single page</a> |-->
+            <!--<a href="debugger.json">View as JSON</a> |-->
+            <a href="debugger.html" tppabs="http://nodejs.cn/api/debugger.html">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a>
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>&#x76EE;&#x5F55;</h2>
+        <ul>
+<li><span class="stability_2"><a href="#debugger_debugger">Debugger</a></span><ul>
+<li><span class="stability_undefined"><a href="#debugger_watchers">Watchers</a></span></li>
+<li><span class="stability_undefined"><a href="#debugger_command_reference">Command reference</a></span><ul>
+<li><span class="stability_undefined"><a href="#debugger_stepping">Stepping</a></span></li>
+<li><span class="stability_undefined"><a href="#debugger_breakpoints">Breakpoints</a></span></li>
+<li><span class="stability_undefined"><a href="#debugger_information">Information</a></span></li>
+<li><span class="stability_undefined"><a href="#debugger_execution_control">Execution control</a></span></li>
+<li><span class="stability_undefined"><a href="#debugger_various">Various</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#debugger_advanced_usage">Advanced Usage</a></span><ul>
+<li><span class="stability_undefined"><a href="#debugger_v8_inspector_integration_for_node_js">V8 Inspector Integration for Node.js</a></span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>Debugger<span><a class="mark" href="#debugger_debugger" id="debugger_debugger">#</a></span></h1><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_debugger" tppabs="http://nodejs.cn/api/debugger.html#debugger_debugger">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<pre class="api_stability api_stability_2"><a href="documentation-1.html#documentation_stability_index" tppabs="http://nodejs.cn/api/en/documentation.html#documentation_stability_index">Stability: 2</a> - Stable</pre><!-- type=misc -->
+<p>Node.js includes an out-of-process debugging utility accessible via a
+<a href="#debugger_tcp_based_protocol">TCP-based protocol</a> and built-in debugging client. To use it, start Node.js
+with the <code>inspect</code> argument followed by the path to the script to debug; a prompt
+will be displayed indicating successful launch of the debugger:</p>
+<pre><code class="lang-txt">$ node inspect myscript.js
+&lt; Debugger listening on ws://127.0.0.1:9229/80e7a814-7cd3-49fb-921a-2e02228cd5ba
+&lt; For help see https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in myscript.js:1
+&gt; 1 (function (exports, require, module, __filename, __dirname) { global.x = 5;
+  2 setTimeout(() =&gt; {
+  3   console.log(&apos;world&apos;);
+debug&gt;
+</code></pre>
+<p>Node.js&apos;s debugger client is not a full-featured debugger, but simple step and
+inspection are possible.</p>
+<p>Inserting the statement <code>debugger;</code> into the source code of a script will
+enable a breakpoint at that position in the code:</p>
+<!-- eslint-disable no-debugger -->
+<pre><code class="lang-js">// myscript.js
+global.x = 5;
+setTimeout(() =&gt; {
+  debugger;
+  console.log(&apos;world&apos;);
+}, 1000);
+console.log(&apos;hello&apos;);
+</code></pre>
+<p>Once the debugger is run, a breakpoint will occur at line 3:</p>
+<pre><code class="lang-txt">$ node inspect myscript.js
+&lt; Debugger listening on ws://127.0.0.1:9229/80e7a814-7cd3-49fb-921a-2e02228cd5ba
+&lt; For help see https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in myscript.js:1
+&gt; 1 (function (exports, require, module, __filename, __dirname) { global.x = 5;
+  2 setTimeout(() =&gt; {
+  3   debugger;
+debug&gt; cont
+&lt; hello
+break in myscript.js:3
+  1 (function (exports, require, module, __filename, __dirname) { global.x = 5;
+  2 setTimeout(() =&gt; {
+&gt; 3   debugger;
+  4   console.log(&apos;world&apos;);
+  5 }, 1000);
+debug&gt; next
+break in myscript.js:4
+  2 setTimeout(() =&gt; {
+  3   debugger;
+&gt; 4   console.log(&apos;world&apos;);
+  5 }, 1000);
+  6 console.log(&apos;hello&apos;);
+debug&gt; repl
+Press Ctrl + C to leave debug repl
+&gt; x
+5
+&gt; 2+2
+4
+debug&gt; next
+&lt; world
+break in myscript.js:5
+  3   debugger;
+  4   console.log(&apos;world&apos;);
+&gt; 5 }, 1000);
+  6 console.log(&apos;hello&apos;);
+  7
+debug&gt; .exit
+</code></pre>
+<p>The <code>repl</code> command allows code to be evaluated remotely. The <code>next</code> command
+steps to the next line. Type <code>help</code> to see what other commands are available.</p>
+<p>Pressing <code>enter</code> without typing a command will repeat the previous debugger
+command.</p>
+<h2>Watchers<span><a class="mark" href="#debugger_watchers" id="debugger_watchers">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_watchers" tppabs="http://nodejs.cn/api/debugger.html#debugger_watchers">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<p>It is possible to watch expression and variable values while debugging. On
+every breakpoint, each expression from the watchers list will be evaluated
+in the current context and displayed immediately before the breakpoint&apos;s
+source code listing.</p>
+<p>To begin watching an expression, type <code>watch(&apos;my_expression&apos;)</code>. The command
+<code>watchers</code> will print the active watchers. To remove a watcher, type
+<code>unwatch(&apos;my_expression&apos;)</code>.</p>
+<h2>Command reference<span><a class="mark" href="#debugger_command_reference" id="debugger_command_reference">#</a></span></h2>
+<h3>Stepping<span><a class="mark" href="#debugger_stepping" id="debugger_stepping">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_stepping" tppabs="http://nodejs.cn/api/debugger.html#debugger_stepping">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<div class="signature"><ul>
+<li><code>cont</code>, <code>c</code> - Continue execution</li>
+<li><code>next</code>, <code>n</code> - Step next</li>
+<li><code>step</code>, <code>s</code> - Step in</li>
+<li><code>out</code>, <code>o</code> - Step out</li>
+<li><code>pause</code> - Pause running code (like pause button in Developer Tools)</li>
+</ul>
+</div><h3>Breakpoints<span><a class="mark" href="#debugger_breakpoints" id="debugger_breakpoints">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_breakpoints" tppabs="http://nodejs.cn/api/debugger.html#debugger_breakpoints">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<div class="signature"><ul>
+<li><code>setBreakpoint()</code>, <code>sb()</code> - Set breakpoint on current line</li>
+<li><code>setBreakpoint(line)</code>, <code>sb(line)</code> - Set breakpoint on specific line</li>
+<li><code>setBreakpoint(&apos;fn()&apos;)</code>, <code>sb(...)</code> - Set breakpoint on a first statement in
+functions body</li>
+<li><code>setBreakpoint(&apos;script.js&apos;, 1)</code>, <code>sb(...)</code> - Set breakpoint on first line of
+script.js</li>
+<li><code>clearBreakpoint(&apos;script.js&apos;, 1)</code>, <code>cb(...)</code> - Clear breakpoint in script.js
+on line 1</li>
+</ul>
+</div><p>It is also possible to set a breakpoint in a file (module) that
+is not loaded yet:</p>
+<pre><code class="lang-txt">$ node inspect test/fixtures/break-in-module/main.js
+&lt; Debugger listening on ws://127.0.0.1:9229/4e3db158-9791-4274-8909-914f7facf3bd
+&lt; For help see https://nodejs.org/en/docs/inspector
+&lt; Debugger attached.
+Break on start in test/fixtures/break-in-module/main.js:1
+&gt; 1 (function (exports, require, module, __filename, __dirname) { const mod = require(&apos;./mod.js&apos;);
+  2 mod.hello();
+  3 mod.hello();
+debug&gt; setBreakpoint(&apos;mod.js&apos;, 22)
+Warning: script &apos;mod.js&apos; was not loaded yet.
+debug&gt; c
+break in test/fixtures/break-in-module/mod.js:22
+ 20 // USE OR OTHER DEALINGS IN THE SOFTWARE.
+ 21
+&gt;22 exports.hello = function() {
+ 23   return &apos;hello from module&apos;;
+ 24 };
+debug&gt;
+</code></pre>
+<h3>Information<span><a class="mark" href="#debugger_information" id="debugger_information">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_information" tppabs="http://nodejs.cn/api/debugger.html#debugger_information">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<div class="signature"><ul>
+<li><code>backtrace</code>, <code>bt</code> - Print backtrace of current execution frame</li>
+<li><code>list(5)</code> - List scripts source code with 5 line context (5 lines before and
+after)</li>
+<li><code>watch(expr)</code> - Add expression to watch list</li>
+<li><code>unwatch(expr)</code> - Remove expression from watch list</li>
+<li><code>watchers</code> - List all watchers and their values (automatically listed on each
+breakpoint)</li>
+<li><code>repl</code> - Open debugger&apos;s repl for evaluation in debugging script&apos;s context</li>
+<li><code>exec expr</code> - Execute an expression in debugging script&apos;s context</li>
+</ul>
+</div><h3>Execution control<span><a class="mark" href="#debugger_execution_control" id="debugger_execution_control">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_execution_control" tppabs="http://nodejs.cn/api/debugger.html#debugger_execution_control">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<div class="signature"><ul>
+<li><code>run</code> - Run script (automatically runs on debugger&apos;s start)</li>
+<li><code>restart</code> - Restart script</li>
+<li><code>kill</code> - Kill script</li>
+</ul>
+</div><h3>Various<span><a class="mark" href="#debugger_various" id="debugger_various">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_various" tppabs="http://nodejs.cn/api/debugger.html#debugger_various">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<div class="signature"><ul>
+<li><code>scripts</code> - List all loaded scripts</li>
+<li><code>version</code> - Display V8&apos;s version</li>
+</ul>
+</div><h2>Advanced Usage<span><a class="mark" href="#debugger_advanced_usage" id="debugger_advanced_usage">#</a></span></h2>
+<h3>V8 Inspector Integration for Node.js<span><a class="mark" href="#debugger_v8_inspector_integration_for_node_js" id="debugger_v8_inspector_integration_for_node_js">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="debugger.html#debugger_v8_inspector_integration_for_node_js" tppabs="http://nodejs.cn/api/debugger.html#debugger_v8_inspector_integration_for_node_js">&#x67E5;&#x770B;&#x4E2D;&#x6587;&#x7248;</a></p>
+<p>V8 Inspector integration allows attaching Chrome DevTools to Node.js
+instances for debugging and profiling. It uses the <a href="javascript:if(confirm('https://chromedevtools.github.io/debugger-protocol-viewer/  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://chromedevtools.github.io/debugger-protocol-viewer/'" tppabs="https://chromedevtools.github.io/debugger-protocol-viewer/">Chrome Debugging Protocol</a>.</p>
+<p>V8 Inspector can be enabled by passing the <code>--inspect</code> flag when starting a
+Node.js application. It is also possible to supply a custom port with that flag,
+e.g. <code>--inspect=9222</code> will accept DevTools connections on port 9222.</p>
+<p>To break on the first line of the application code, pass the <code>--inspect-brk</code>
+flag instead of <code>--inspect</code>.</p>
+<pre><code class="lang-txt">$ node --inspect index.js
+Debugger listening on 127.0.0.1:9229.
+To start debugging, open the following URL in Chrome:
+    chrome-devtools://devtools/bundled/inspector.html?experiments=true&amp;v8only=true&amp;ws=127.0.0.1:9229/dc9010dd-f8b8-4ac5-a510-c1a114ec7d29
+</code></pre>
+<p>(In the example above, the UUID dc9010dd-f8b8-4ac5-a510-c1a114ec7d29
+at the end of the URL is generated on the fly, it varies in different
+debugging sessions.)</p>
+
+      </div>
+    </div>
+  </div>
+  <script src="api.js-20170605" tppabs="http://nodejs.cn/static/api.js?20170605"></script>
+</body>
+</html>

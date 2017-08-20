@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>net | Node.js API &#x6587;&#x6863;</title>
+  <link rel="stylesheet" href="api.css-20170605.css" tppabs="http://nodejs.cn/static/api.css?20170605">
+  <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+</head>
+<body class="alt apidoc" id="api-section-net">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="javascript:if(confirm('http://nodejs.cn/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://nodejs.cn/'" tppabs="http://nodejs.cn/">
+          Node.js &#x4E2D;&#x6587;&#x7F51;
+        </a>
+        <div>
+          <input placeholder="API &#x5FEB;&#x901F;&#x641C;&#x7D22;" id="search_input">
+        </div>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="documentation.html" tppabs="http://nodejs.cn/api/documentation.html">&#x5173;&#x4E8E;&#x672C;&#x6587;&#x6863;</a></li>
+<li><a class="nav-synopsis" href="synopsis.html" tppabs="http://nodejs.cn/api/synopsis.html">&#x7528;&#x6CD5;&#x4E0E;&#x4F8B;&#x5B50;</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-assert" href="assert.html" tppabs="http://nodejs.cn/api/assert.html">Assert (&#x65AD;&#x8A00;)</a></li>
+<li><a class="nav-async_hooks" href="async_hooks.html" tppabs="http://nodejs.cn/api/async_hooks.html">Async Hooks (&#x5F02;&#x6B65;&#x94A9;)</a></li>
+<li><a class="nav-buffer" href="buffer.html" tppabs="http://nodejs.cn/api/buffer.html">Buffer (&#x7F13;&#x51B2;)</a></li>
+<li><a class="nav-child_process" href="child_process.html" tppabs="http://nodejs.cn/api/child_process.html">Child Processes (&#x5B50;&#x8FDB;&#x7A0B;)</a></li>
+<li><a class="nav-cluster" href="cluster.html" tppabs="http://nodejs.cn/api/cluster.html">Cluster (&#x96C6;&#x7FA4;)</a></li>
+<li><a class="nav-console" href="console.html" tppabs="http://nodejs.cn/api/console.html">Console (&#x63A7;&#x5236;&#x53F0;)</a></li>
+<li><a class="nav-crypto" href="crypto.html" tppabs="http://nodejs.cn/api/crypto.html">Crypto (&#x52A0;&#x5BC6;)</a></li>
+<li><a class="nav-dns" href="dns.html" tppabs="http://nodejs.cn/api/dns.html">DNS (&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;)</a></li>
+<li><a class="nav-domain" href="domain.html" tppabs="http://nodejs.cn/api/domain.html">Domain (&#x57DF;)</a></li>
+<li><a class="nav-errors" href="errors.html" tppabs="http://nodejs.cn/api/errors.html">Error (&#x9519;&#x8BEF;)</a></li>
+<li><a class="nav-events" href="events.html" tppabs="http://nodejs.cn/api/events.html">Events (&#x4E8B;&#x4EF6;)</a></li>
+<li><a class="nav-fs" href="fs.html" tppabs="http://nodejs.cn/api/fs.html">File System (&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;)</a></li>
+<li><a class="nav-globals" href="globals.html" tppabs="http://nodejs.cn/api/globals.html">Global (&#x5168;&#x5C40;&#x53D8;&#x91CF;)</a></li>
+<li><a class="nav-http" href="http.html" tppabs="http://nodejs.cn/api/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https.html" tppabs="http://nodejs.cn/api/https.html">HTTPS</a></li>
+<li><a class="nav-inspector" href="inspector.html" tppabs="http://nodejs.cn/api/inspector.html">Inspector</a></li>
+<li><a class="nav-modules" href="modules.html" tppabs="http://nodejs.cn/api/modules.html">Module (&#x6A21;&#x5757;)</a></li>
+<li><a class="nav-net active" href="net.html" tppabs="http://nodejs.cn/api/net.html">Net (&#x7F51;&#x7EDC;)</a></li>
+<li><a class="nav-os" href="os.html" tppabs="http://nodejs.cn/api/os.html">OS (&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;)</a></li>
+<li><a class="nav-path" href="path.html" tppabs="http://nodejs.cn/api/path.html">Path (&#x8DEF;&#x5F84;)</a></li>
+<li><a class="nav-process" href="process.html" tppabs="http://nodejs.cn/api/process.html">Process (&#x8FDB;&#x7A0B;)</a></li>
+<li><a class="nav-punycode" href="punycode.html" tppabs="http://nodejs.cn/api/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="querystring.html" tppabs="http://nodejs.cn/api/querystring.html">Query Strings (&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;)</a></li>
+<li><a class="nav-readline" href="readline.html" tppabs="http://nodejs.cn/api/readline.html">Readline (&#x9010;&#x884C;&#x8BFB;&#x53D6;)</a></li>
+<li><a class="nav-repl" href="repl.html" tppabs="http://nodejs.cn/api/repl.html">REPL (&#x4EA4;&#x4E92;&#x5F0F;&#x89E3;&#x91CA;&#x5668;)</a></li>
+<li><a class="nav-stream" href="stream.html" tppabs="http://nodejs.cn/api/stream.html">Stream (&#x6D41;)</a></li>
+<li><a class="nav-string_decoder" href="string_decoder.html" tppabs="http://nodejs.cn/api/string_decoder.html">String Decoder (&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;&#x5668;)</a></li>
+<li><a class="nav-timers" href="timers.html" tppabs="http://nodejs.cn/api/timers.html">Timer (&#x5B9A;&#x65F6;&#x5668;)</a></li>
+<li><a class="nav-tls" href="tls.html" tppabs="http://nodejs.cn/api/tls.html">TLS (&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5C42;)</a></li>
+<li><a class="nav-tty" href="tty.html" tppabs="http://nodejs.cn/api/tty.html">TTY (&#x7EC8;&#x7AEF;)</a></li>
+<li><a class="nav-dgram" href="dgram.html" tppabs="http://nodejs.cn/api/dgram.html">UDP/Datagram (&#x6570;&#x636E;&#x62A5;)</a></li>
+<li><a class="nav-url" href="url.html" tppabs="http://nodejs.cn/api/url.html">URL</a></li>
+<li><a class="nav-util" href="util.html" tppabs="http://nodejs.cn/api/util.html">Util (&#x5B9E;&#x7528;&#x5DE5;&#x5177;)</a></li>
+<li><a class="nav-v8" href="v8.html" tppabs="http://nodejs.cn/api/v8.html">V8</a></li>
+<li><a class="nav-vm" href="vm.html" tppabs="http://nodejs.cn/api/vm.html">VM (&#x865A;&#x62DF;&#x673A;)</a></li>
+<li><a class="nav-zlib" href="zlib.html" tppabs="http://nodejs.cn/api/zlib.html">ZLIB (&#x538B;&#x7F29;)</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-addons" href="addons.html" tppabs="http://nodejs.cn/api/addons.html">C++ &#x63D2;&#x4EF6;</a></li>
+<li><a class="nav-n-api" href="n-api.html" tppabs="http://nodejs.cn/api/n-api.html">N-API</a></li>
+<li><a class="nav-cli" href="cli.html" tppabs="http://nodejs.cn/api/cli.html">&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;</a></li>
+<li><a class="nav-debugger" href="debugger.html" tppabs="http://nodejs.cn/api/debugger.html">debugger &#x8C03;&#x8BD5;&#x5668;</a></li>
+<li><a class="nav-intl" href="intl.html" tppabs="http://nodejs.cn/api/intl.html">&#x56FD;&#x9645;&#x5316;</a></li>
+<li><a class="nav-tracing" href="tracing.html" tppabs="http://nodejs.cn/api/tracing.html">&#x8DDF;&#x8E2A;</a></li>
+<li><a class="nav-deprecations" href="deprecations.html" tppabs="http://nodejs.cn/api/deprecations.html">&#x5E9F;&#x5F03;&#x7684; API</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="net" class="interior">
+      <header>
+        <h1>Node.js v8.2.1 &#x6587;&#x6863;</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.htm" tppabs="http://nodejs.cn/api/" name="toc">&#x8FD4;&#x56DE;&#x6587;&#x6863;&#x9996;&#x9875;</a>
+            <!--<a href="/api/all.html">ÂçïÈ°µÈù¢ÊòæÁ§∫</a> |-->
+            <!--<a href="/api/net.json">JSONÊ†ºÂºè</a> |-->
+            <!--<a href="/api/en/net.html">Êü•ÁúãËã±ÊñáÁâà</a>-->
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>&#x76EE;&#x5F55;</h2>
+        <ul>
+<li><span class="stability_2"><a href="#net_net">net (&#x7F51;&#x7EDC;)</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_ipc_support">IPC Support</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_identifying_paths_for_ipc_connections">Identifying paths for IPC connections</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_class_net_server">net.Server &#x7C7B;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_new_net_server_options_connectionlistener">new net.Server([options][, connectionListener])</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_event_close">&apos;close&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_connection">&apos;connection&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_error">&apos;error&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_listening">&apos;listening&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_address">server.address()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_close_callback">server.close([callback])</a></span></li>
+<li><span class="stability_0"><a href="#net_server_connections">server.connections</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_getconnections_callback">server.getConnections(callback)</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_listen">server.listen()</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_server_listen_handle_backlog_callback">server.listen(handle[, backlog][, callback])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_listen_options_callback">server.listen(options[, callback])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_listen_path_backlog_callback">server.listen(path[, backlog][, callback])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_listen_port_host_backlog_callback">server.listen([port][, host][, backlog][, callback])</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_server_listening">server.listening</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_maxconnections">server.maxConnections</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_ref">server.ref()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_server_unref">server.unref()</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_class_net_socket">net.Socket &#x7C7B;</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_new_net_socket_options">new net.Socket([options])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_close_1">&apos;close&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_connect">&apos;connect&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_data">&apos;data&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_drain">&apos;drain&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_end">&apos;end&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_error_1">&apos;error&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_lookup">&apos;lookup&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_event_timeout">&apos;timeout&apos; &#x4E8B;&#x4EF6;</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_address">socket.address()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_buffersize">socket.bufferSize</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_bytesread">socket.bytesRead</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_byteswritten">socket.bytesWritten</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_connect">socket.connect()</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_socket_connect_options_connectlistener">socket.connect(options[, connectListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_connect_path_connectlistener">socket.connect(path[, connectListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_connect_port_host_connectlistener">socket.connect(port[, host][, connectListener])</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_socket_connecting">socket.connecting</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_destroy_exception">socket.destroy([exception])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_destroyed">socket.destroyed</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_end_data_encoding">socket.end([data][, encoding])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_localaddress">socket.localAddress</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_localport">socket.localPort</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_pause">socket.pause()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_ref">socket.ref()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_remoteaddress">socket.remoteAddress</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_remotefamily">socket.remoteFamily</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_remoteport">socket.remotePort</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_resume">socket.resume()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_setencoding_encoding">socket.setEncoding([encoding])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_setkeepalive_enable_initialdelay">socket.setKeepAlive([enable][, initialDelay])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_setnodelay_nodelay">socket.setNoDelay([noDelay])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_settimeout_timeout_callback">socket.setTimeout(timeout[, callback])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_unref">socket.unref()</a></span></li>
+<li><span class="stability_undefined"><a href="#net_socket_write_data_encoding_callback">socket.write(data[, encoding][, callback])</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_net_connect">net.connect()</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_net_connect_options_connectlistener">net.connect(options[, connectListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_connect_path_connectlistener">net.connect(path[, connectListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_connect_port_host_connectlistener">net.connect(port[, host][, connectListener])</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_net_createconnection">net.createConnection()</a></span><ul>
+<li><span class="stability_undefined"><a href="#net_net_createconnection_options_connectlistener">net.createConnection(options[, connectListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_createconnection_path_connectlistener">net.createConnection(path[, connectListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_createconnection_port_host_connectlistener">net.createConnection(port[, host][, connectListener])</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#net_net_createserver_options_connectionlistener">net.createServer([options][, connectionListener])</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_isip_input">net.isIP(input)</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_isipv4_input">net.isIPv4(input)</a></span></li>
+<li><span class="stability_undefined"><a href="#net_net_isipv6_input">net.isIPv6(input)</a></span></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>net (&#x7F51;&#x7EDC;)<span><a class="mark" href="#net_net" id="net_net">#</a></span></h1><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net" tppabs="http://nodejs.cn/api/en/net.html#net_net">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<pre class="api_stability api_stability_2"><a href="documentation.html#documentation_stability_index" tppabs="http://nodejs.cn/api/documentation.html#documentation_stability_index">&#x7A33;&#x5B9A;&#x6027;: 2</a> - &#x7A33;&#x5B9A;</pre><p><code>net</code>&#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x57FA;&#x4E8E;tcp&#x6216;<a href="#net_ipc_support">IPC</a> servers (<a href="#net_net_createserver_options_connectionlistener"><code>net.createServer()</code></a>)&#x548C;clients(<a href="#net_net_createconnection"><code>net.createConnection()</code></a>)
+&#x7684;&#x5F02;&#x6B65;api</p>
+<p>&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x5F0F;&#x5F15;&#x5165;:</p>
+<pre><code class="lang-js">const net = require(&apos;net&apos;);
+</code></pre>
+<h2>IPC Support<span><a class="mark" href="#net_ipc_support" id="net_ipc_support">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_ipc_support" tppabs="http://nodejs.cn/api/en/net.html#net_ipc_support">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/ipc_support.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/ipc_support.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/ipc_support.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p><code>net</code>&#x6A21;&#x5757;&#x652F;&#x6301;Windows&#x4E0A;&#x547D;&#x540D;&#x7BA1;&#x9053;&#x7684;IPC&#x548C;&#x5176;&#x4ED6;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;UNIX&#x57DF;&#x5957;&#x63A5;&#x5B57;&#x3002;</p>
+<h3>Identifying paths for IPC connections<span><a class="mark" href="#net_identifying_paths_for_ipc_connections" id="net_identifying_paths_for_ipc_connections">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_identifying_paths_for_ipc_connections" tppabs="http://nodejs.cn/api/en/net.html#net_identifying_paths_for_ipc_connections">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/identifying_paths_for_ipc_connections.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/identifying_paths_for_ipc_connections.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/identifying_paths_for_ipc_connections.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p><a href="#net_net_connect"><code>net.connect()</code></a>, <a href="#net_net_createconnection"><code>net.createConnection()</code></a>, <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> and
+<a href="#net_socket_connect"><code>socket.connect()</code></a> take a <code>path</code> parameter to identify IPC endpoints.</p>
+<p>On UNIX, the local domain is also known as the UNIX domain. The path is a
+filesystem path name. It gets truncated to <code>sizeof(sockaddr_un.sun_path) - 1</code>,
+which varies on different operating system between 91 and 107 bytes.
+The typical values are 107 on Linux and 103 on macOS. The path is
+subject to the same naming conventions and permissions checks as would be done
+on file creation. It will be visible in the filesystem, and will <em>persist until
+unlinked</em>.</p>
+<p>On Windows, the local domain is implemented using a named pipe. The path <em>must</em>
+refer to an entry in <code>\\?\pipe\</code> or <code>\\.\pipe\</code>. Any characters are permitted,
+but the latter may do some processing of pipe names, such as resolving <code>..</code>
+sequences. Despite appearances, the pipe name space is flat. Pipes will <em>not
+persist</em>, they are removed when the last reference to them is closed. Do not
+forget JavaScript string escaping requires paths to be specified with
+double-backslashes, such as:</p>
+<pre><code class="lang-js">net.createServer().listen(
+  path.join(&apos;\\\\?\\pipe&apos;, process.cwd(), &apos;myctl&apos;));
+</code></pre>
+<h2>net.Server &#x7C7B;<span><a class="mark" href="#net_class_net_server" id="net_class_net_server">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_class_net_server" tppabs="http://nodejs.cn/api/en/net.html#net_class_net_server">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/class_net_server.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/class_net_server.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/class_net_server.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>&#x8FD9;&#x4E2A;&#x7C7B;&#x7528;&#x4E8E;&#x521B;&#x5EFA;TCP&#x6216;<a href="#net_ipc_support">IPC</a> server.&#x3002;</p>
+<h2>new net.Server([options][, connectionListener])<span><a class="mark" href="#net_new_net_server_options_connectionlistener" id="net_new_net_server_options_connectionlistener">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_new_net_server_options_connectionlistener" tppabs="http://nodejs.cn/api/en/net.html#net_new_net_server_options_connectionlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/new_net_server_options_connectionlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/new_net_server_options_connectionlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/new_net_server_options_connectionlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="signature"><ul>
+<li>&#x8FD4;&#x56DE;: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+</div><p>&#x67E5;&#x770B; <a href="#net_net_createserver_options_connectionlistener"><code>net.createServer([options][, connectionListener])</code></a>.</p>
+<p><code>net.Server</code> is an <a href="events.html#events_class_eventemitter" tppabs="http://nodejs.cn/api/events.html#events_class_eventemitter"><code>EventEmitter</code></a>&#x5B9E;&#x73B0;&#x4E86;&#x4EE5;&#x4E0B;&#x4E8B;&#x4EF6;:</p>
+<h3>&apos;close&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_close" id="net_event_close">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_close" tppabs="http://nodejs.cn/api/en/net.html#net_event_close">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_close.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_close.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_close.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.0</span>
+</div><p>&#x5F53;server&#x5173;&#x95ED;&#x7684;&#x65F6;&#x5019;&#x89E6;&#x53D1;. &#x6CE8;&#x610F;,&#x5982;&#x679C;connections&#x5B58;&#x5728;, &#x76F4;&#x5230;&#x6240;&#x6709;&#x7684;connections&#x7ED3;&#x675F;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;</p>
+<h3>&apos;connection&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_connection" id="net_event_connection">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_connection" tppabs="http://nodejs.cn/api/en/net.html#net_event_connection">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_connection.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_connection.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_connection.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a>  connection &#x5BF9;&#x8C61;</li>
+</ul>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x65B0;&#x7684;connection&#x5EFA;&#x7ACB;&#x7684;&#x65F6;&#x5019;&#x89E6;&#x53D1;. <code>socket</code> &#x662F;&#x4E00;&#x4E2A;
+<code>net.Socket</code>&#x7684;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;.</p>
+<h3>&apos;error&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_error" id="net_event_error">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_error" tppabs="http://nodejs.cn/api/en/net.html#net_event_error">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_error.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_error.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_error.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error" class="type">&lt;Error&gt;</a></li>
+</ul>
+<p>&#x5F53;&#x9519;&#x8BEF;&#x51FA;&#x73B0;&#x7684;&#x65F6;&#x5019;&#x89E6;&#x53D1;. &#x4E0D;&#x540C;&#x4E0E; <a href="#net_class_net_socket"><code>net.Socket</code></a>, <a href="#net_event_close"><code>&apos;close&apos;</code></a>
+&#x4E8B;&#x4EF6;&#x4E0D;&#x4F1A;&#x5728;&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x89E6;&#x53D1;&#x540E;&#x7EE7;&#x7EED;&#x89E6;&#x53D1; &#x9664;&#x975E;
+<a href="#net_server_close_callback"><code>server.close()</code></a> &#x662F;&#x624B;&#x52A8;&#x8C03;&#x7528;. &#x5728;
+<a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a>&#x4E2D;&#x7684;&#x4F8B;&#x5B50;.</p>
+<h3>&apos;listening&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_listening" id="net_event_listening">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_listening" tppabs="http://nodejs.cn/api/en/net.html#net_event_listening">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_listening.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_listening.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_listening.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>&#x5F53;&#x670D;&#x52A1;&#x88AB;&#x7ED1;&#x5B9A;&#x540E;&#x8C03;&#x7528; <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a>.</p>
+<h3>server.address()<span><a class="mark" href="#net_server_address" id="net_server_address">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_address" tppabs="http://nodejs.cn/api/en/net.html#net_server_address">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_address.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_address.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_address.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>&#x5982;&#x679C;&#x5728;IP socket&#x4E0A;&#x76D1;&#x542C;,&#x5219;&#x8FD4;&#x56DE;&#x7ED1;&#x5B9A;&#x7684;ip&#x5730;&#x5740;, &#x5730;&#x5740;&#x65CF;&#x548C;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x62A5;&#x544A;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x53E3;
+&#x5728;&#x627E;&#x5230;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x5206;&#x914D;&#x7684;&#x5730;&#x5740;&#x65F6;&#xFF0C;&#x627E;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7AEF;&#x53E3;&#x662F;&#x6709;&#x7528;&#x7684;.&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6709; <code>port</code>, <code>family</code>, &#x548C; <code>address</code> &#x5C5E;&#x6027;:
+<code>{ port: 12346, family: &apos;IPv4&apos;, address: &apos;127.0.0.1&apos; }</code>&#x7684;&#x5BF9;&#x8C61;</p>
+<p>&#x5BF9;&#x4E8E;&#x5728;&#x7BA1;&#x9053;&#x6216;UNIX&#x57DF;&#x5957;&#x63A5;&#x5B57;&#x4E0A;&#x4FA6;&#x542C;&#x7684;server,&#x8BE5;&#x540D;&#x79F0;&#x5C06;&#x8FD4;&#x56DE;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;</p>
+<p>&#x4F8B;&#x5B50;:</p>
+<pre><code class="lang-js">const server = net.createServer((socket) =&gt; {
+  socket.end(&apos;goodbye\n&apos;);
+}).on(&apos;error&apos;, (err) =&gt; {
+  // handle errors here
+  throw err;
+});
+
+// grab an arbitrary unused port.
+server.listen(() =&gt; {
+  console.log(&apos;opened server on&apos;, server.address());
+});
+</code></pre>
+<p>&#x53EA;&#x6709;&#x5230;&#x4E86; <code>&apos;listening&apos;</code> &#x4E8B;&#x4EF6;&#x88AB;&#x89E6;&#x53D1;&#x65F6;&#x5019;.&#x624D;&#x53EF;&#x4EE5;&#x8C03;&#x7528; <code>server.address()</code> </p>
+<h3>server.close([callback])<span><a class="mark" href="#net_server_close_callback" id="net_server_close_callback">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_close_callback" tppabs="http://nodejs.cn/api/en/net.html#net_server_close_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_close_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_close_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_close_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li>&#x8FD4;&#x56DE;: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>&#x505C;&#x6B62; server&#x63A5;&#x53D7;&#x5EFA;&#x7ACB;&#x65B0;&#x7684;connections&#x5E76;&#x4FDD;&#x6301;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;connections.&#x6B64;&#x529F;&#x80FD;&#x662F;&#x5F02;&#x6B65;&#x7684;,&#x5F53;&#x6240;&#x6709;&#x7684;connections&#x5173;&#x95ED;&#x540C;&#x65F6;server&#x54CD;&#x5E94; <a href="#net_event_close"><code>&apos;close&apos;</code></a>&#x4E8B;&#x4EF6;&#x7684;&#x65F6;&#x5019;,server&#x5C06;&#x4F1A;&#x6700;&#x7EC8;&#x5173;&#x95ED;.
+&#x4E00;&#x65E6;<code>&apos;close&apos;</code>&#x53D1;&#x751F;&#x5C06;&#x4F1A;&#x8C03;&#x7528;&#x53EF;&#x9009;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;. &#x4E0E;&#x8BE5;&#x4E8B;&#x4EF6;&#x4E0D;&#x540C;, &#x5982;&#x679C;&#x670D;&#x52A1;&#x5668;&#x5728;&#x5173;&#x95ED;&#x65F6;&#x672A;&#x6253;&#x5F00;&#xFF0C;&#x5219;&#x5C06;&#x4F7F;&#x7528;&#x9519;&#x8BEF;&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x53C2;&#x6570;&#x3002;</p>
+<p>&#x8FD4;&#x56DE; <code>server</code>&#x3002;</p>
+<h3>server.connections<span><a class="mark" href="#net_server_connections" id="net_server_connections">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_connections" tppabs="http://nodejs.cn/api/en/net.html#net_server_connections">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_connections.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_connections.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_connections.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.2.0</span><span>&#x5E9F;&#x5F03;&#x4E8E;: v0.9.7</span>
+</div><pre class="api_stability api_stability_0"><a href="documentation.html#documentation_stability_index" tppabs="http://nodejs.cn/api/documentation.html#documentation_stability_index">Stability: 0</a> - Deprecated: Use <a href="#net_server_getconnections_callback"><code>server.getConnections()</code></a> instead.</pre><p>The number of concurrent connections on the server.</p>
+<p>This becomes <code>null</code> when sending a socket to a child with
+<a href="child_process.html#child_process_child_process_fork_modulepath_args_options" tppabs="http://nodejs.cn/api/child_process.html#child_process_child_process_fork_modulepath_args_options"><code>child_process.fork()</code></a>. To poll forks and get current number of active
+connections use asynchronous <code>server.getConnections</code> instead.</p>
+<h3>server.getConnections(callback)<span><a class="mark" href="#net_server_getconnections_callback" id="net_server_getconnections_callback">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_getconnections_callback" tppabs="http://nodejs.cn/api/en/net.html#net_server_getconnections_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_getconnections_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_getconnections_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_getconnections_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.7</span>
+</div><ul>
+<li>Returns <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>Asynchronously get the number of concurrent connections on the server. Works
+when sockets were sent to forks.</p>
+<p>Callback should take two arguments <code>err</code> and <code>count</code>.</p>
+<h3>server.listen()<span><a class="mark" href="#net_server_listen" id="net_server_listen">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_listen" tppabs="http://nodejs.cn/api/en/net.html#net_server_listen">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>&#x4E3A;connections&#x542F;&#x52A8;&#x4E00;&#x4E2A; server &#x76D1;&#x542C;. &#x4E00;&#x4E2A; <code>net.Server</code> &#x53EF;&#x4EE5;&#x662F;&#x4E00;&#x4E2A; TCP &#x6216;&#x8005; 
+&#x4E00;&#x4E2A; <a href="#net_ipc_support">IPC</a> server&#xFF0C;&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x5B83;&#x76D1;&#x542C;&#x4EC0;&#x4E48;&#x3002;</p>
+<p>Possible signatures:</p>
+<ul>
+<li><a href="#net_server_listen_handle_backlog_callback"><code>server.listen(handle[, backlog][, callback])</code></a></li>
+<li><a href="#net_server_listen_options_callback"><code>server.listen(options[, callback])</code></a></li>
+<li><a href="#net_server_listen_path_backlog_callback"><code>server.listen(path[, backlog][, callback])</code></a>
+for <a href="#net_ipc_support">IPC</a> servers</li>
+<li><a href="#net_server_listen_port_host_backlog_callback"><code>server.listen([port][, host][, backlog][, callback])</code></a>
+for TCP servers</li>
+</ul>
+<p>&#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x5F02;&#x6B65;&#x7684;&#x3002;&#x5F53; server &#x5F00;&#x59CB;&#x76D1;&#x542C;&#xFF0C;<a href="#net_event_listening"><code>&apos;listening&apos;</code></a> &#x4E8B;&#x4EF6;&#x4F1A;&#x89E6;&#x53D1;&#x3002;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x53C2;&#x6570;
+<code>callback</code> &#x5C06;&#x4F1A;&#x88AB;&#x6DFB;&#x52A0;&#x4E3A;<a href="#net_event_listening"><code>&apos;listening&apos;</code></a> &#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x5668;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x7684; <code>listen()</code> &#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x4F20;&#x5165;&#x4E00;&#x4E2A; <code>backlog</code> &#x53C2;&#x6570;&#x6765;&#x6307;&#x5B9A;&#x5F85;&#x8FDE;&#x63A5;&#x961F;&#x5217;&#x7684;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x3002;
+&#x5B9E;&#x9645;&#x957F;&#x5EA6;&#x5C06;&#x901A;&#x8FC7; OS &#x7684; sysctl &#x8BBE;&#x7F6E;&#xFF0C; &#x4F8B;&#x5982; linux &#x91CC;&#x7684; <code>tcp_max_syn_backlog</code> &#x548C; <code>somaxconn</code>&#x3002;
+&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F;511 (&#x4E0D;&#x662F;512&#xFF09;</p>
+<p><em>&#x8BF4;&#x660E;</em>&#xFF1A;</p>
+<ul>
+<li><p>&#x6240;&#x6709;&#x7684;<a href="#net_class_net_socket"><code>net.Socket</code></a> &#x88AB;&#x8BBE;&#x7F6E;&#x4E3A; <code>So_REUSEADDR</code> (&#x8BE6;&#x89C1; <a href="javascript:if(confirm('http://man7.org/linux/man-pages/man7/socket.7.html  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://man7.org/linux/man-pages/man7/socket.7.html'" tppabs="http://man7.org/linux/man-pages/man7/socket.7.html">socket(7)</a>)</p>
+</li>
+<li><p><code>server.listen()</code> &#x65B9;&#x6CD5;&#x53EF;&#x80FD;&#x4F1A;&#x88AB;&#x8C03;&#x7528;&#x591A;&#x6B21;. &#x901A;&#x8FC7;&#x5148;&#x524D;&#x63D0;&#x4F9B;&#x7684;&#x9009;&#x9879;, &#x6BCF;&#x4E2A; subsequent call &#x5C06;&#x4F1A; <em>re-open</em> &#x8BE5; server</p>
+</li>
+</ul>
+<p>&#x76D1;&#x542C;&#x65F6;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x6700;&#x5E38;&#x5F15;&#x53D1;&#x7684;&#x9519;&#x8BEF;&#x662F; <code>EADDRINUSE</code>&#x3002;
+&#x8FD9;&#x53D1;&#x751F;&#x5728;&#x5F53;&#x53E6;&#x4E00;&#x4E2A; server &#x5DF2;&#x7ECF;&#x76D1;&#x542C;&#x4E86;&#x8BE5;&#x8BF7;&#x6C42;&#x4E2D;&#x7684; <code>port</code> / <code>path</code> / <code>handle</code>&#x3002;
+&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x7684;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x662F;&#x5728;&#x4E00;&#x5B9A;&#x65F6;&#x95F4;&#x540E;&#x91CD;&#x8BD5;&#xFF1A;</p>
+<pre><code class="lang-js">server.on(&apos;error&apos;, (e) =&gt; {
+  if (e.code === &apos;EADDRINUSE&apos;) {
+    console.log(&apos;Address in use, retrying...&apos;);
+    setTimeout(() =&gt; {
+      server.close();
+      server.listen(PORT, HOST);
+    }, 1000);
+  }
+});
+</code></pre>
+<h4>server.listen(handle[, backlog][, callback])<span><a class="mark" href="#net_server_listen_handle_backlog_callback" id="net_server_listen_handle_backlog_callback">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_listen_handle_backlog_callback" tppabs="http://nodejs.cn/api/en/net.html#net_server_listen_handle_backlog_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_handle_backlog_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_handle_backlog_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_handle_backlog_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.10</span>
+</div><ul>
+<li><code>handle</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a></li>
+<li><code>backlog</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> functions</li>
+<li><code>callback</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> functions</li>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>Start a server listening for connections on a given <code>handle</code> that has
+already been bound to a port, a UNIX domain socket, or a Windows named pipe.</p>
+<p>The <code>handle</code> object can be either a server, a socket (anything with an
+underlying <code>_handle</code> member), or an object with a <code>fd</code> member that is a
+valid file descriptor.</p>
+<p><em>Note</em>: Listening on a file descriptor is not supported on Windows.</p>
+<h4>server.listen(options[, callback])<span><a class="mark" href="#net_server_listen_options_callback" id="net_server_listen_options_callback">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_listen_options_callback" tppabs="http://nodejs.cn/api/en/net.html#net_server_listen_options_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_options_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_options_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_options_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.11.14</span>
+</div><ul>
+<li><code>options</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a> Required. Supports the following properties:<ul>
+<li><code>port</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a></li>
+<li><code>host</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a></li>
+<li><code>path</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Will be ignored if <code>port</code> is specified. See
+<a href="#net_identifying_paths_for_ipc_connections">Identifying paths for IPC connections</a>.</li>
+<li><code>backlog</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a>
+functions</li>
+<li><code>exclusive</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> Default to <code>false</code></li>
+</ul>
+</li>
+<li><code>callback</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a>
+functions</li>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>If <code>port</code> is specified, it behaves the same as
+<a href="#net_server_listen_port_host_backlog_callback"><code>server.listen([port][, hostname][, backlog][, callback])</code></a>.
+Otherwise, if <code>path</code> is specified, it behaves the same as
+<a href="#net_server_listen_path_backlog_callback"><code>server.listen(path[, backlog][, callback])</code></a>.
+If none of them is specified, an error will be thrown.</p>
+<p>If <code>exclusive</code> is <code>false</code> (default), then cluster workers will use the same
+underlying handle, allowing connection handling duties to be shared. When
+<code>exclusive</code> is <code>true</code>, the handle is not shared, and attempted port sharing
+results in an error. An example which listens on an exclusive port is
+shown below.</p>
+<pre><code class="lang-js">server.listen({
+  host: &apos;localhost&apos;,
+  port: 80,
+  exclusive: true
+});
+</code></pre>
+<h4>server.listen(path[, backlog][, callback])<span><a class="mark" href="#net_server_listen_path_backlog_callback" id="net_server_listen_path_backlog_callback">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_listen_path_backlog_callback" tppabs="http://nodejs.cn/api/en/net.html#net_server_listen_path_backlog_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_path_backlog_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_path_backlog_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_path_backlog_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>path</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;String&gt;</a> Path the server should listen to. See
+<a href="#net_identifying_paths_for_ipc_connections">Identifying paths for IPC connections</a>.</li>
+<li><code>backlog</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> functions</li>
+<li><code>callback</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> functions</li>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>Start a <a href="#net_ipc_support">IPC</a> server listening for connections on the given <code>path</code>.</p>
+<h4>server.listen([port][, host][, backlog][, callback])<span><a class="mark" href="#net_server_listen_port_host_backlog_callback" id="net_server_listen_port_host_backlog_callback">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_listen_port_host_backlog_callback" tppabs="http://nodejs.cn/api/en/net.html#net_server_listen_port_host_backlog_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_port_host_backlog_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_port_host_backlog_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_listen_port_host_backlog_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>port</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a></li>
+<li><code>host</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a></li>
+<li><code>backlog</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> functions</li>
+<li><code>callback</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_server_listen_port_hostname_backlog_callback"><code>server.listen()</code></a> functions</li>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>Start a TCP server listening for connections on the given <code>port</code> and <code>host</code>.</p>
+<p>If <code>port</code> is omitted or is 0, the operating system will assign an arbitrary
+unused port, which can be retrieved by using <code>server.address().port</code>
+after the <a href="#net_event_listening"><code>&apos;listening&apos;</code></a> event has been emitted.</p>
+<p>If <code>host</code> is omitted, the server will accept connections on the
+<a href="javascript:if(confirm('https://en.wikipedia.org/wiki/IPv6_address  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/IPv6_address#Unspecified_address'" tppabs="https://en.wikipedia.org/wiki/IPv6_address#Unspecified_address">unspecified IPv6 address</a> (<code>::</code>) when IPv6 is available, or the
+<a href="javascript:if(confirm('https://en.wikipedia.org/wiki/0.0.0.0  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/0.0.0.0'" tppabs="https://en.wikipedia.org/wiki/0.0.0.0">unspecified IPv4 address</a> (<code>0.0.0.0</code>) otherwise.</p>
+<p><em>Note</em>: In most operating systems, listening to the
+<a href="javascript:if(confirm('https://en.wikipedia.org/wiki/IPv6_address  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/IPv6_address#Unspecified_address'" tppabs="https://en.wikipedia.org/wiki/IPv6_address#Unspecified_address">unspecified IPv6 address</a> (<code>::</code>) may cause the <code>net.Server</code> to also listen on
+the <a href="javascript:if(confirm('https://en.wikipedia.org/wiki/0.0.0.0  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/0.0.0.0'" tppabs="https://en.wikipedia.org/wiki/0.0.0.0">unspecified IPv4 address</a> (<code>0.0.0.0</code>).</p>
+<h3>server.listening<span><a class="mark" href="#net_server_listening" id="net_server_listening">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_listening" tppabs="http://nodejs.cn/api/en/net.html#net_server_listening">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_listening.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_listening.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_listening.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v5.7.0</span>
+</div><p>&#x4E00;&#x4E2A;&#x5E03;&#x5C14;&#x503C;&#xFF0C; &#x8868;&#x660E; server &#x662F;&#x5426;&#x6B63;&#x5728;&#x76D1;&#x542C;&#x8FDE;&#x63A5;</p>
+<h3>server.maxConnections<span><a class="mark" href="#net_server_maxconnections" id="net_server_maxconnections">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_maxconnections" tppabs="http://nodejs.cn/api/en/net.html#net_server_maxconnections">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_maxconnections.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_maxconnections.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_maxconnections.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.2.0</span>
+</div><p>&#x8BBE;&#x7F6E;&#x8BE5;&#x5C5E;&#x6027;&#x4F7F;&#x5F97;&#x5F53; server &#x8FDE;&#x63A5;&#x6570;&#x8FC7;&#x591A;&#x65F6;&#x62D2;&#x7EDD;&#x8FDE;&#x63A5;&#x3002;</p>
+<p>&#x4E00;&#x65E6;&#x5C06;&#x4E00;&#x4E2A;&#x5957;&#x63A5;&#x5B57;&#x53D1;&#x9001;&#x7ED9;[<code>child process.fork()</code>][]&#x751F;&#x6210;&#x7684;&#x5B50;&#x8FDB;&#x7A0B;&#xFF0C; &#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8BE5;&#x9009;&#x9879;&#x3002;</p>
+<h3>server.ref()<span><a class="mark" href="#net_server_ref" id="net_server_ref">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_ref" tppabs="http://nodejs.cn/api/en/net.html#net_server_ref">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_ref.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_ref.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_ref.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.1</span>
+</div><ul>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>Opposite of <code>unref</code>, calling <code>ref</code> on a previously <code>unref</code>d server will <em>not</em>
+let the program exit if it&apos;s the only server left (the default behavior). If
+the server is <code>ref</code>d calling <code>ref</code> again will have no effect.</p>
+<h3>server.unref()<span><a class="mark" href="#net_server_unref" id="net_server_unref">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_server_unref" tppabs="http://nodejs.cn/api/en/net.html#net_server_unref">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/server_unref.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/server_unref.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/server_unref.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.1</span>
+</div><ul>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>Calling <code>unref</code> on a server will allow the program to exit if this is the only
+active server in the event system. If the server is already <code>unref</code>d calling
+<code>unref</code> again will have no effect.</p>
+<h2>net.Socket &#x7C7B;<span><a class="mark" href="#net_class_net_socket" id="net_class_net_socket">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_class_net_socket" tppabs="http://nodejs.cn/api/en/net.html#net_class_net_socket">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/class_net_socket.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/class_net_socket.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/class_net_socket.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.4</span>
+</div><p>This class is an abstraction of a TCP socket or a streaming <a href="#net_ipc_support">IPC</a> endpoint
+(uses named pipes on Windows, and UNIX domain sockets otherwise). A
+<code>net.Socket</code> is also a <a href="stream.html#stream_class_stream_duplex" tppabs="http://nodejs.cn/api/stream.html#stream_class_stream_duplex">duplex stream</a>, so it can be both readable and
+writable, and it is also a <a href="events.html#events_class_eventemitter" tppabs="http://nodejs.cn/api/events.html#events_class_eventemitter"><code>EventEmitter</code></a>.</p>
+<p>A <code>net.Socket</code> can be created by the user and used directly to interact with
+a server. For example, it is returned by <a href="#net_net_createconnection"><code>net.createConnection()</code></a>,
+so the user can use it to talk to the server.</p>
+<p>It can also be be created by Node.js and passed to the user when a connection
+is received. For example, it is passed to the listeners of a
+<a href="#net_event_connection"><code>&apos;connection&apos;</code></a> event emitted on a <a href="#net_class_net_server"><code>net.Server</code></a>, so the user can use
+it to interact with the client.</p>
+<h3>new net.Socket([options])<span><a class="mark" href="#net_new_net_socket_options" id="net_new_net_socket_options">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_new_net_socket_options" tppabs="http://nodejs.cn/api/en/net.html#net_new_net_socket_options">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/new_net_socket_options.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/new_net_socket_options.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/new_net_socket_options.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.4</span>
+</div><p>Creates a new socket object.</p>
+<ul>
+<li><code>options</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a> Available options are:<ul>
+<li><code>fd</code>: <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> If specified, wrap around an existing socket with
+the given file descriptor, otherwise a new socket will be created.</li>
+<li><code>allowHalfOpen</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> Indicates whether half-opened TCP connections
+are allowed. See <a href="#net_net_createserver_options_connectionlistener"><code>net.createServer()</code></a> and the <a href="#net_event_end"><code>&apos;end&apos;</code></a> event
+for details. Defaults to <code>false</code>.</li>
+<li><code>readable</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> Allow reads on the socket when a <code>fd</code> is passed,
+otherwise ignored. Defaults to <code>false</code>.</li>
+<li><code>writable</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> Allow reads on the socket when a <code>fd</code> is passed,
+otherwise ignored. Defaults to <code>false</code>.</li>
+</ul>
+</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a></li>
+</ul>
+<p>The newly created socket can be either a TCP socket or a streaming <a href="#net_ipc_support">IPC</a>
+endpoint, depending on what it <a href="#net_socket_connect"><code>connect()</code></a> to.</p>
+<h3>&apos;close&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_close_1" id="net_event_close_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_close_1" tppabs="http://nodejs.cn/api/en/net.html#net_event_close_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_close_1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_close_1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_close_1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>had_error</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> <code>true</code> if the socket had a transmission error.</li>
+</ul>
+<p>Emitted once the socket is fully closed. The argument <code>had_error</code> is a boolean
+which says if the socket was closed due to a transmission error.</p>
+<h3>&apos;connect&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_connect" id="net_event_connect">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_connect" tppabs="http://nodejs.cn/api/en/net.html#net_event_connect">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_connect.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_connect.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_connect.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Emitted when a socket connection is successfully established.
+See <a href="#net_net_createconnection"><code>net.createConnection()</code></a>.</p>
+<h3>&apos;data&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_data" id="net_event_data">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_data" tppabs="http://nodejs.cn/api/en/net.html#net_event_data">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_data.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_data.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_data.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><a href="buffer.html#buffer_class_buffer" tppabs="http://nodejs.cn/api/buffer.html#buffer_class_buffer" class="type">&lt;Buffer&gt;</a></li>
+</ul>
+<p>Emitted when data is received.  The argument <code>data</code> will be a <code>Buffer</code> or
+<code>String</code>.  Encoding of data is set by <code>socket.setEncoding()</code>.
+(See the <a href="stream.html#stream_class_stream_readable" tppabs="http://nodejs.cn/api/stream.html#stream_class_stream_readable">Readable Stream</a> section for more information.)</p>
+<p>Note that the <strong>data will be lost</strong> if there is no listener when a <code>Socket</code>
+emits a <code>&apos;data&apos;</code> event.</p>
+<h3>&apos;drain&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_drain" id="net_event_drain">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_drain" tppabs="http://nodejs.cn/api/en/net.html#net_event_drain">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_drain.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_drain.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_drain.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Emitted when the write buffer becomes empty. Can be used to throttle uploads.</p>
+<p>See also: the return values of <code>socket.write()</code></p>
+<h3>&apos;end&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_end" id="net_event_end">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_end" tppabs="http://nodejs.cn/api/en/net.html#net_event_end">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_end.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_end.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_end.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Emitted when the other end of the socket sends a FIN packet, thus ending the
+readable side of the socket.</p>
+<p>By default (<code>allowHalfOpen</code> is <code>false</code>) the socket will send a FIN packet
+back and destroy its file descriptor once it has written out its pending
+write queue. However, if <code>allowHalfOpen</code> is set to <code>true</code>, the socket will
+not automatically <a href="#net_socket_end_data_encoding"><code>end()</code></a> its writable side, allowing the
+user to write arbitrary amounts of data. The user must call
+<a href="#net_socket_end_data_encoding"><code>end()</code></a> explicitly to close the connection (i.e. sending a
+FIN packet back).</p>
+<h3>&apos;error&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_error_1" id="net_event_error_1">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_error_1" tppabs="http://nodejs.cn/api/en/net.html#net_event_error_1">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_error_1.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_error_1.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_error_1.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error" class="type">&lt;Error&gt;</a></li>
+</ul>
+<p>Emitted when an error occurs.  The <code>&apos;close&apos;</code> event will be called directly
+following this event.</p>
+<h3>&apos;lookup&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_lookup" id="net_event_lookup">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_lookup" tppabs="http://nodejs.cn/api/en/net.html#net_event_lookup">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_lookup.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_lookup.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_lookup.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<details class="changelog"><summary>&#x7248;&#x672C;&#x5386;&#x53F2;</summary>
+<table>
+<tr><th>&#x7248;&#x672C;</th><th>&#x53D8;&#x66F4;</th></tr>
+<tr><td>v5.10.0</td>
+<td><p>The <code>host</code> parameter is supported now.</p>
+</td></tr>
+<tr><td>v0.11.3</td>
+<td><p><span>&#x65B0;&#x589E;&#x4E8E;: v0.11.3</span></p>
+</td></tr>
+</table>
+</details>
+</div><p>Emitted after resolving the hostname but before connecting.
+Not applicable to UNIX sockets.</p>
+<ul>
+<li><code>err</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error" class="type">&lt;Error&gt;</a> | <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type" class="type">&lt;null&gt;</a> The error object.  See <a href="dns.html#dns_dns_lookup_hostname_options_callback" tppabs="http://nodejs.cn/api/dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a>.</li>
+<li><code>address</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> The IP address.</li>
+<li><code>family</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> | <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Null_type" class="type">&lt;null&gt;</a> The address type.  See <a href="dns.html#dns_dns_lookup_hostname_options_callback" tppabs="http://nodejs.cn/api/dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a>.</li>
+<li><code>host</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> The hostname.</li>
+</ul>
+<h3>&apos;timeout&apos; &#x4E8B;&#x4EF6;<span><a class="mark" href="#net_event_timeout" id="net_event_timeout">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_event_timeout" tppabs="http://nodejs.cn/api/en/net.html#net_event_timeout">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/event_timeout.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/event_timeout.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/event_timeout.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Emitted if the socket times out from inactivity. This is only to notify that
+the socket has been idle. The user must manually close the connection.</p>
+<p>See also: <a href="#net_socket_settimeout_timeout_callback"><code>socket.setTimeout()</code></a></p>
+<h3>socket.address()<span><a class="mark" href="#net_socket_address" id="net_socket_address">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_address" tppabs="http://nodejs.cn/api/en/net.html#net_socket_address">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_address.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_address.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_address.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Returns the bound address, the address family name and port of the
+socket as reported by the operating system. Returns an object with
+three properties, e.g.
+<code>{ port: 12346, family: &apos;IPv4&apos;, address: &apos;127.0.0.1&apos; }</code></p>
+<h3>socket.bufferSize<span><a class="mark" href="#net_socket_buffersize" id="net_socket_buffersize">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_buffersize" tppabs="http://nodejs.cn/api/en/net.html#net_socket_buffersize">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_buffersize.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_buffersize.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_buffersize.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.8</span>
+</div><p><code>net.Socket</code> has the property that <code>socket.write()</code> always works. This is to
+help users get up and running quickly. The computer cannot always keep up
+with the amount of data that is written to a socket - the network connection
+simply might be too slow. Node.js will internally queue up the data written to a
+socket and send it out over the wire when it is possible. (Internally it is
+polling on the socket&apos;s file descriptor for being writable).</p>
+<p>The consequence of this internal buffering is that memory may grow. This
+property shows the number of characters currently buffered to be written.
+(Number of characters is approximately equal to the number of bytes to be
+written, but the buffer may contain strings, and the strings are lazily
+encoded, so the exact number of bytes is not known.)</p>
+<p>Users who experience large or growing <code>bufferSize</code> should attempt to
+&quot;throttle&quot; the data flows in their program with
+<a href="#net_socket_pause"><code>socket.pause()</code></a> and <a href="#net_socket_resume"><code>socket.resume()</code></a>.</p>
+<h3>socket.bytesRead<span><a class="mark" href="#net_socket_bytesread" id="net_socket_bytesread">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_bytesread" tppabs="http://nodejs.cn/api/en/net.html#net_socket_bytesread">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_bytesread.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_bytesread.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_bytesread.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.3</span>
+</div><p>The amount of received bytes.</p>
+<h3>socket.bytesWritten<span><a class="mark" href="#net_socket_byteswritten" id="net_socket_byteswritten">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_byteswritten" tppabs="http://nodejs.cn/api/en/net.html#net_socket_byteswritten">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_byteswritten.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_byteswritten.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_byteswritten.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.3</span>
+</div><p>The amount of bytes sent.</p>
+<h3>socket.connect()<span><a class="mark" href="#net_socket_connect" id="net_socket_connect">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_connect" tppabs="http://nodejs.cn/api/en/net.html#net_socket_connect">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>Initiate a connection on a given socket.</p>
+<p>Possible signatures:</p>
+<ul>
+<li><a href="#net_socket_connect_options_connectlistener">socket.connect(options[, connectListener])</a></li>
+<li><a href="#net_socket_connect_path_connectlistener">socket.connect(path[, connectListener])</a>
+for <a href="#net_ipc_support">IPC</a> connections.</li>
+<li><a href="#net_socket_connect_port_host_connectlistener">socket.connect(port[, host][, connectListener])</a>
+for TCP connections.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>This function is asynchronous. When the connection is established, the
+<a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event will be emitted. If there is a problem connecting,
+instead of a <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event, an <a href="#net_event_error_1"><code>&apos;error&apos;</code></a> event will be emitted with
+the error passed to the <a href="#net_event_error_1"><code>&apos;error&apos;</code></a> listener.
+The last parameter <code>connectListener</code>, if supplied, will be added as a listener
+for the <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event <strong>once</strong>.</p>
+<h4>socket.connect(options[, connectListener])<span><a class="mark" href="#net_socket_connect_options_connectlistener" id="net_socket_connect_options_connectlistener">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_connect_options_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_socket_connect_options_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_options_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_options_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_options_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<details class="changelog"><summary>&#x7248;&#x672C;&#x5386;&#x53F2;</summary>
+<table>
+<tr><th>&#x7248;&#x672C;</th><th>&#x53D8;&#x66F4;</th></tr>
+<tr><td>v6.0.0</td>
+<td><p>The <code>hints</code> option defaults to <code>0</code> in all cases now. Previously, in the absence of the <code>family</code> option it would default to <code>dns.ADDRCONFIG | dns.V4MAPPED</code>.</p>
+</td></tr>
+<tr><td>v5.11.0</td>
+<td><p>The <code>hints</code> option is supported now.</p>
+</td></tr>
+<tr><td>v0.1.90</td>
+<td><p><span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span></p>
+</td></tr>
+</table>
+</details>
+</div><ul>
+<li><code>options</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a></li>
+<li><code>connectListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_socket_connect"><code>socket.connect()</code></a>
+methods. Will be added as a listener for the <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event once.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Initiate a connection on a given socket. Normally this method is not needed,
+the socket should be created and opened with <a href="#net_net_createconnection"><code>net.createConnection()</code></a>. Use
+this only when implementing a custom Socket.</p>
+<p>For TCP connections, available <code>options</code> are:</p>
+<ul>
+<li><code>port</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Required. Port the socket should connect to.</li>
+<li><code>host</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Host the socket should connect to. Defaults to <code>&apos;localhost&apos;</code>.</li>
+<li><code>localAddress</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Local address the socket should connect from.</li>
+<li><code>localPort</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Local port the socket should connect from.</li>
+<li><code>family</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a>: Version of IP stack, can be either 4 or 6. Defaults to 4.</li>
+<li><code>hints</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Optional <a href="dns.html#dns_supported_getaddrinfo_flags" tppabs="http://nodejs.cn/api/dns.html#dns_supported_getaddrinfo_flags"><code>dns.lookup()</code> hints</a>.</li>
+<li><code>lookup</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Custom lookup function. Defaults to <a href="dns.html#dns_dns_lookup_hostname_options_callback" tppabs="http://nodejs.cn/api/dns.html#dns_dns_lookup_hostname_options_callback"><code>dns.lookup()</code></a>.</li>
+</ul>
+<p>For <a href="#net_ipc_support">IPC</a> connections, available <code>options</code> are:</p>
+<ul>
+<li><code>path</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Required. Path the client should connect to.
+See <a href="#net_identifying_paths_for_ipc_connections">Identifying paths for IPC connections</a>.</li>
+</ul>
+<p>Returns <code>socket</code>.</p>
+<h4>socket.connect(path[, connectListener])<span><a class="mark" href="#net_socket_connect_path_connectlistener" id="net_socket_connect_path_connectlistener">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_connect_path_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_socket_connect_path_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_path_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_path_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_path_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="signature"><ul>
+<li><code>path</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Path the client should connect to. See
+<a href="#net_identifying_paths_for_ipc_connections">Identifying paths for IPC connections</a>.</li>
+<li><code>connectListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_socket_connect"><code>socket.connect()</code></a>
+methods. Will be added as a listener for the <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event once.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+</div><p>Initiate an <a href="#net_ipc_support">IPC</a> connection on the given socket.</p>
+<p>Alias to
+<a href="#net_socket_connect_options_connectlistener"><code>socket.connect(options[, connectListener])</code></a>
+called with <code>{ path: path }</code> as <code>options</code>.</p>
+<p>Returns <code>socket</code>.</p>
+<h4>socket.connect(port[, host][, connectListener])<span><a class="mark" href="#net_socket_connect_port_host_connectlistener" id="net_socket_connect_port_host_connectlistener">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_connect_port_host_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_socket_connect_port_host_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_port_host_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_port_host_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connect_port_host_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>port</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Port the client should connect to.</li>
+<li><code>host</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Host the client should connect to.</li>
+<li><code>connectListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of <a href="#net_socket_connect"><code>socket.connect()</code></a>
+methods. Will be added as a listener for the <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event once.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Initiate a TCP connection on the given socket.</p>
+<p>Alias to
+<a href="#net_socket_connect_options_connectlistener"><code>socket.connect(options[, connectListener])</code></a>
+called with <code>{port: port, host: host}</code> as <code>options</code>.</p>
+<p>Returns <code>socket</code>.</p>
+<h3>socket.connecting<span><a class="mark" href="#net_socket_connecting" id="net_socket_connecting">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_connecting" tppabs="http://nodejs.cn/api/en/net.html#net_socket_connecting">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connecting.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connecting.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_connecting.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v6.1.0</span>
+</div><p>If <code>true</code> -
+<a href="#net_socket_connect_options_connectlistener"><code>socket.connect(options[, connectListener])</code></a>
+was called and haven&apos;t yet finished. Will be set to <code>false</code> before emitting
+<code>connect</code> event and/or calling
+<a href="#net_socket_connect_options_connectlistener"><code>socket.connect(options[, connectListener])</code></a>&apos;s
+callback.</p>
+<h3>socket.destroy([exception])<span><a class="mark" href="#net_socket_destroy_exception" id="net_socket_destroy_exception">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_destroy_exception" tppabs="http://nodejs.cn/api/en/net.html#net_socket_destroy_exception">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_destroy_exception.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_destroy_exception.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_destroy_exception.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a></li>
+</ul>
+<p>Ensures that no more I/O activity happens on this socket. Only necessary in
+case of errors (parse error or so).</p>
+<p>If <code>exception</code> is specified, an <a href="#net_event_error_1"><code>&apos;error&apos;</code></a> event will be emitted and any
+listeners for that event will receive <code>exception</code> as an argument.</p>
+<h3>socket.destroyed<span><a class="mark" href="#net_socket_destroyed" id="net_socket_destroyed">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_destroyed" tppabs="http://nodejs.cn/api/en/net.html#net_socket_destroyed">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_destroyed.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_destroyed.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_destroyed.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>A Boolean value that indicates if the connection is destroyed or not. Once a
+connection is destroyed no further data can be transferred using it.</p>
+<h3>socket.end([data][, encoding])<span><a class="mark" href="#net_socket_end_data_encoding" id="net_socket_end_data_encoding">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_end_data_encoding" tppabs="http://nodejs.cn/api/en/net.html#net_socket_end_data_encoding">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_end_data_encoding.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_end_data_encoding.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_end_data_encoding.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Half-closes the socket. i.e., it sends a FIN packet. It is possible the
+server will still send some data.</p>
+<p>If <code>data</code> is specified, it is equivalent to calling
+<code>socket.write(data, encoding)</code> followed by <a href="#net_socket_end_data_encoding"><code>socket.end()</code></a>.</p>
+<h3>socket.localAddress<span><a class="mark" href="#net_socket_localaddress" id="net_socket_localaddress">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_localaddress" tppabs="http://nodejs.cn/api/en/net.html#net_socket_localaddress">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_localaddress.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_localaddress.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_localaddress.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.6</span>
+</div><p>The string representation of the local IP address the remote client is
+connecting on. For example, in a server listening on <code>&apos;0.0.0.0&apos;</code>, if a client
+connects on <code>&apos;192.168.1.1&apos;</code>, the value of <code>socket.localAddress</code> would be
+<code>&apos;192.168.1.1&apos;</code>.</p>
+<h3>socket.localPort<span><a class="mark" href="#net_socket_localport" id="net_socket_localport">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_localport" tppabs="http://nodejs.cn/api/en/net.html#net_socket_localport">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_localport.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_localport.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_localport.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.6</span>
+</div><p>The numeric representation of the local port. For example,
+<code>80</code> or <code>21</code>.</p>
+<h3>socket.pause()<span><a class="mark" href="#net_socket_pause" id="net_socket_pause">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_pause" tppabs="http://nodejs.cn/api/en/net.html#net_socket_pause">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_pause.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_pause.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_pause.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="signature"><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+</div><p>Pauses the reading of data. That is, <a href="#net_event_data"><code>&apos;data&apos;</code></a> events will not be emitted.
+Useful to throttle back an upload.</p>
+<h3>socket.ref()<span><a class="mark" href="#net_socket_ref" id="net_socket_ref">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_ref" tppabs="http://nodejs.cn/api/en/net.html#net_socket_ref">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_ref.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_ref.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_ref.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.1</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Opposite of <code>unref</code>, calling <code>ref</code> on a previously <code>unref</code>d socket will <em>not</em>
+let the program exit if it&apos;s the only socket left (the default behavior). If
+the socket is <code>ref</code>d calling <code>ref</code> again will have no effect.</p>
+<h3>socket.remoteAddress<span><a class="mark" href="#net_socket_remoteaddress" id="net_socket_remoteaddress">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_remoteaddress" tppabs="http://nodejs.cn/api/en/net.html#net_socket_remoteaddress">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remoteaddress.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remoteaddress.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remoteaddress.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.10</span>
+</div><p>The string representation of the remote IP address. For example,
+<code>&apos;74.125.127.100&apos;</code> or <code>&apos;2001:4860:a005::68&apos;</code>. Value may be <code>undefined</code> if
+the socket is destroyed (for example, if the client disconnected).</p>
+<h3>socket.remoteFamily<span><a class="mark" href="#net_socket_remotefamily" id="net_socket_remotefamily">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_remotefamily" tppabs="http://nodejs.cn/api/en/net.html#net_socket_remotefamily">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remotefamily.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remotefamily.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remotefamily.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.11.14</span>
+</div><p>The string representation of the remote IP family. <code>&apos;IPv4&apos;</code> or <code>&apos;IPv6&apos;</code>.</p>
+<h3>socket.remotePort<span><a class="mark" href="#net_socket_remoteport" id="net_socket_remoteport">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_remoteport" tppabs="http://nodejs.cn/api/en/net.html#net_socket_remoteport">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remoteport.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remoteport.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_remoteport.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.10</span>
+</div><p>The numeric representation of the remote port. For example,
+<code>80</code> or <code>21</code>.</p>
+<h3>socket.resume()<span><a class="mark" href="#net_socket_resume" id="net_socket_resume">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_resume" tppabs="http://nodejs.cn/api/en/net.html#net_socket_resume">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_resume.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_resume.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_resume.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="signature"><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+</div><p>Resumes reading after a call to <a href="#net_socket_pause"><code>socket.pause()</code></a>.</p>
+<h3>socket.setEncoding([encoding])<span><a class="mark" href="#net_socket_setencoding_encoding" id="net_socket_setencoding_encoding">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_setencoding_encoding" tppabs="http://nodejs.cn/api/en/net.html#net_socket_setencoding_encoding">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setencoding_encoding.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setencoding_encoding.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setencoding_encoding.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Set the encoding for the socket as a <a href="stream.html#stream_class_stream_readable" tppabs="http://nodejs.cn/api/stream.html#stream_class_stream_readable">Readable Stream</a>. See
+<a href="stream.html#stream_readable_setencoding_encoding" tppabs="http://nodejs.cn/api/stream.html#stream_readable_setencoding_encoding"><code>stream.setEncoding()</code></a> for more information.</p>
+<h3>socket.setKeepAlive([enable][, initialDelay])<span><a class="mark" href="#net_socket_setkeepalive_enable_initialdelay" id="net_socket_setkeepalive_enable_initialdelay">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_setkeepalive_enable_initialdelay" tppabs="http://nodejs.cn/api/en/net.html#net_socket_setkeepalive_enable_initialdelay">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setkeepalive_enable_initialdelay.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setkeepalive_enable_initialdelay.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setkeepalive_enable_initialdelay.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.92</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Enable/disable keep-alive functionality, and optionally set the initial
+delay before the first keepalive probe is sent on an idle socket.
+<code>enable</code> defaults to <code>false</code>.</p>
+<p>Set <code>initialDelay</code> (in milliseconds) to set the delay between the last
+data packet received and the first keepalive probe. Setting 0 for
+initialDelay will leave the value unchanged from the default
+(or previous) setting. Defaults to <code>0</code>.</p>
+<h3>socket.setNoDelay([noDelay])<span><a class="mark" href="#net_socket_setnodelay_nodelay" id="net_socket_setnodelay_nodelay">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_setnodelay_nodelay" tppabs="http://nodejs.cn/api/en/net.html#net_socket_setnodelay_nodelay">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setnodelay_nodelay.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setnodelay_nodelay.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_setnodelay_nodelay.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Disables the Nagle algorithm. By default TCP connections use the Nagle
+algorithm, they buffer data before sending it off. Setting <code>true</code> for
+<code>noDelay</code> will immediately fire off data each time <code>socket.write()</code> is called.
+<code>noDelay</code> defaults to <code>true</code>.</p>
+<h3>socket.setTimeout(timeout[, callback])<span><a class="mark" href="#net_socket_settimeout_timeout_callback" id="net_socket_settimeout_timeout_callback">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_settimeout_timeout_callback" tppabs="http://nodejs.cn/api/en/net.html#net_socket_settimeout_timeout_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_settimeout_timeout_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_settimeout_timeout_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_settimeout_timeout_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Sets the socket to timeout after <code>timeout</code> milliseconds of inactivity on
+the socket. By default <code>net.Socket</code> do not have a timeout.</p>
+<p>When an idle timeout is triggered the socket will receive a <a href="#net_event_timeout"><code>&apos;timeout&apos;</code></a>
+event but the connection will not be severed. The user must manually call
+<a href="#net_socket_end_data_encoding"><code>socket.end()</code></a> or <a href="#net_socket_destroy_exception"><code>socket.destroy()</code></a> to end the connection.</p>
+<pre><code class="lang-js">socket.setTimeout(3000);
+socket.on(&apos;timeout&apos;, () =&gt; {
+  console.log(&apos;socket timeout&apos;);
+  socket.end();
+});
+</code></pre>
+<p>If <code>timeout</code> is 0, then the existing idle timeout is disabled.</p>
+<p>The optional <code>callback</code> parameter will be added as a one time listener for the
+<a href="#net_event_timeout"><code>&apos;timeout&apos;</code></a> event.</p>
+<h3>socket.unref()<span><a class="mark" href="#net_socket_unref" id="net_socket_unref">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_unref" tppabs="http://nodejs.cn/api/en/net.html#net_socket_unref">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_unref.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_unref.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_unref.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.9.1</span>
+</div><ul>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The socket itself.</li>
+</ul>
+<p>Calling <code>unref</code> on a socket will allow the program to exit if this is the only
+active socket in the event system. If the socket is already <code>unref</code>d calling
+<code>unref</code> again will have no effect.</p>
+<h3>socket.write(data[, encoding][, callback])<span><a class="mark" href="#net_socket_write_data_encoding_callback" id="net_socket_write_data_encoding_callback">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_socket_write_data_encoding_callback" tppabs="http://nodejs.cn/api/en/net.html#net_socket_write_data_encoding_callback">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/socket_write_data_encoding_callback.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/socket_write_data_encoding_callback.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/socket_write_data_encoding_callback.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Sends data on the socket. The second parameter specifies the encoding in the
+case of a string--it defaults to UTF8 encoding.</p>
+<p>Returns <code>true</code> if the entire data was flushed successfully to the kernel
+buffer. Returns <code>false</code> if all or part of the data was queued in user memory.
+<a href="#net_event_drain"><code>&apos;drain&apos;</code></a> will be emitted when the buffer is again free.</p>
+<p>The optional <code>callback</code> parameter will be executed when the data is finally
+written out - this may not be immediately.</p>
+<h2>net.connect()<span><a class="mark" href="#net_net_connect" id="net_net_connect">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_connect" tppabs="http://nodejs.cn/api/en/net.html#net_net_connect">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>Aliases to
+<a href="#net_net_createconnection"><code>net.createConnection()</code></a>.</p>
+<p>Possible signatures:</p>
+<ul>
+<li><a href="#net_net_connect_options_connectlistener"><code>net.connect(options[, connectListener])</code></a></li>
+<li><a href="#net_net_connect_path_connectlistener"><code>net.connect(path[, connectListener])</code></a> for <a href="#net_ipc_support">IPC</a>
+connections.</li>
+<li><a href="#net_net_connect_port_host_connectlistener"><code>net.connect(port[, host][, connectListener])</code></a>
+for TCP connections.</li>
+</ul>
+<h3>net.connect(options[, connectListener])<span><a class="mark" href="#net_net_connect_options_connectlistener" id="net_net_connect_options_connectlistener">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_connect_options_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_connect_options_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_options_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_options_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_options_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.7.0</span>
+</div><p>Alias to
+<a href="#net_net_createconnection_options_connectlistener"><code>net.createConnection(options[, connectListener])</code></a>.</p>
+<h3>net.connect(path[, connectListener])<span><a class="mark" href="#net_net_connect_path_connectlistener" id="net_net_connect_path_connectlistener">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_connect_path_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_connect_path_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_path_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_path_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_path_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Alias to
+<a href="#net_net_createconnection_path_connectlistener"><code>net.createConnection(path[, connectListener])</code></a>.</p>
+<h3>net.connect(port[, host][, connectListener])<span><a class="mark" href="#net_net_connect_port_host_connectlistener" id="net_net_connect_port_host_connectlistener">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_connect_port_host_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_connect_port_host_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_port_host_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_port_host_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_connect_port_host_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><p>Alias to
+<a href="#net_net_createconnection_port_host_connectlistener"><code>net.createConnection(port[, host][, connectListener])</code></a>.</p>
+<h2>net.createConnection()<span><a class="mark" href="#net_net_createconnection" id="net_net_createconnection">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_createconnection" tppabs="http://nodejs.cn/api/en/net.html#net_net_createconnection">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>A factory function, which creates a new <a href="#net_class_net_socket"><code>net.Socket</code></a>,
+immediately initiates connection with <a href="#net_socket_connect"><code>socket.connect()</code></a>,
+then returns the <code>net.Socket</code> that starts the connection.</p>
+<p>When the connection is established, a <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event will be emitted
+on the returned socket. The last parameter <code>connectListener</code>, if supplied,
+will be added as a listener for the <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event <strong>once</strong>.</p>
+<p>Possible signatures:</p>
+<ul>
+<li><a href="#net_net_createconnection_options_connectlistener"><code>net.createConnection(options[, connectListener])</code></a></li>
+<li><a href="#net_net_createconnection_path_connectlistener"><code>net.createConnection(path[, connectListener])</code></a>
+for <a href="#net_ipc_support">IPC</a> connections.</li>
+<li><a href="#net_net_createconnection_port_host_connectlistener"><code>net.createConnection(port[, host][, connectListener])</code></a>
+for TCP connections.</li>
+</ul>
+<p><em>Note</em>: The <a href="#net_net_connect"><code>net.connect()</code></a> function is an alias to this function.</p>
+<h3>net.createConnection(options[, connectListener])<span><a class="mark" href="#net_net_createconnection_options_connectlistener" id="net_net_createconnection_options_connectlistener">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_createconnection_options_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_createconnection_options_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_options_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_options_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_options_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>options</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a> Required. Will be passed to both the
+<a href="#net_new_net_socket_options"><code>new net.Socket([options])</code></a> call and the
+<a href="#net_socket_connect_options_connectlistener"><code>socket.connect(options[, connectListener])</code></a>
+method.</li>
+<li><code>connectListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of the
+<a href="#net_net_createconnection"><code>net.createConnection()</code></a> functions. If supplied, will be added as
+a listener for the <a href="#net_event_connect"><code>&apos;connect&apos;</code></a> event on the returned socket once.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The newly created socket used to start the connection.</li>
+</ul>
+<p>For available options, see
+<a href="#net_new_net_socket_options"><code>new net.Socket([options])</code></a>
+and <a href="#net_socket_connect_options_connectlistener"><code>socket.connect(options[, connectListener])</code></a>.</p>
+<p>Additional options:</p>
+<ul>
+<li><code>timeout</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> If set, will be used to call
+<a href="#net_socket_settimeout_timeout_callback"><code>socket.setTimeout(timeout)</code></a> after the socket is created, but before
+it starts the connection.</li>
+</ul>
+<p>Following is an example of a client of the echo server described
+in the <a href="#net_net_createserver_options_connectionlistener"><code>net.createServer()</code></a> section:</p>
+<pre><code class="lang-js">const net = require(&apos;net&apos;);
+const client = net.createConnection({ port: 8124 }, () =&gt; {
+  //&apos;connect&apos; listener
+  console.log(&apos;connected to server!&apos;);
+  client.write(&apos;world!\r\n&apos;);
+});
+client.on(&apos;data&apos;, (data) =&gt; {
+  console.log(data.toString());
+  client.end();
+});
+client.on(&apos;end&apos;, () =&gt; {
+  console.log(&apos;disconnected from server&apos;);
+});
+</code></pre>
+<p>To connect on the socket <code>/tmp/echo.sock</code> the second line would just be
+changed to</p>
+<pre><code class="lang-js">const client = net.createConnection({ path: &apos;/tmp/echo.sock&apos; });
+</code></pre>
+<h3>net.createConnection(path[, connectListener])<span><a class="mark" href="#net_net_createconnection_path_connectlistener" id="net_net_createconnection_path_connectlistener">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_createconnection_path_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_createconnection_path_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_path_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_path_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_path_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>path</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Path the socket should connect to. Will be passed to
+<a href="#net_socket_connect_path_connectlistener"><code>socket.connect(path[, connectListener])</code></a>.
+See <a href="#net_identifying_paths_for_ipc_connections">Identifying paths for IPC connections</a>.</li>
+<li><code>connectListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of the
+<a href="#net_net_createconnection"><code>net.createConnection()</code></a> functions, an &quot;once&quot; listener for the
+<code>&apos;connect&apos;</code> event on the initiating socket. Will be passed to
+<a href="#net_socket_connect_path_connectlistener"><code>socket.connect(path[, connectListener])</code></a>.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The newly created socket used to start the connection.</li>
+</ul>
+<p>Initiates an <a href="#net_ipc_support">IPC</a> connection.</p>
+<p>This function creates a new <a href="#net_class_net_socket"><code>net.Socket</code></a> with all options set to default,
+immediately initiates connection with
+<a href="#net_socket_connect_path_connectlistener"><code>socket.connect(path[, connectListener])</code></a>,
+then returns the <code>net.Socket</code> that starts the connection.</p>
+<h3>net.createConnection(port[, host][, connectListener])<span><a class="mark" href="#net_net_createconnection_port_host_connectlistener" id="net_net_createconnection_port_host_connectlistener">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_createconnection_port_host_connectlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_createconnection_port_host_connectlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_port_host_connectlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_port_host_connectlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_createconnection_port_host_connectlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.1.90</span>
+</div><ul>
+<li><code>port</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Number_type" class="type">&lt;number&gt;</a> Port the socket should connect to. Will be passed to
+<a href="#net_socket_connect_port_host_connectlistener"><code>socket.connect(port[, host][, connectListener])</code></a>.</li>
+<li><code>host</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#String_type" class="type">&lt;string&gt;</a> Host the socket should connect to. Defaults to <code>&apos;localhost&apos;</code>.
+Will be passed to
+<a href="#net_socket_connect_port_host_connectlistener"><code>socket.connect(port[, host][, connectListener])</code></a>.</li>
+<li><code>connectListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Common parameter of the
+<a href="#net_net_createconnection"><code>net.createConnection()</code></a> functions, an &quot;once&quot; listener for the
+<code>&apos;connect&apos;</code> event on the initiating socket. Will be passed to
+<a href="#net_socket_connect_port_host_connectlistener"><code>socket.connect(path[, connectListener])</code></a>.</li>
+<li>Returns: <a href="net.html#net_class_net_socket" tppabs="http://nodejs.cn/api/net.html#net_class_net_socket" class="type">&lt;net.Socket&gt;</a> The newly created socket used to start the connection.</li>
+</ul>
+<p>Initiates a TCP connection.</p>
+<p>This function creates a new <a href="#net_class_net_socket"><code>net.Socket</code></a> with all options set to default,
+immediately initiates connection with
+<a href="#net_socket_connect_port_host_connectlistener"><code>socket.connect(port[, host][, connectListener])</code></a>,
+then returns the <code>net.Socket</code> that starts the connection.</p>
+<h2>net.createServer([options][, connectionListener])<span><a class="mark" href="#net_net_createserver_options_connectionlistener" id="net_net_createserver_options_connectionlistener">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_createserver_options_connectionlistener" tppabs="http://nodejs.cn/api/en/net.html#net_net_createserver_options_connectionlistener">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_createserver_options_connectionlistener.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_createserver_options_connectionlistener.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_createserver_options_connectionlistener.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.5.0</span>
+</div><p>Creates a new TCP or <a href="#net_ipc_support">IPC</a> server.</p>
+<ul>
+<li><code>options</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" class="type">&lt;Object&gt;</a><ul>
+<li><code>allowHalfOpen</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> Default to <code>false</code>. Indicates whether half-opened
+TCP connections are allowed.</li>
+<li><code>pauseOnConnect</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#Boolean_type" class="type">&lt;boolean&gt;</a> Default to <code>false</code>. Indicates whether the socket
+should be paused on incoming connections.</li>
+</ul>
+</li>
+<li><code>connectionListener</code> <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" class="type">&lt;Function&gt;</a> Automatically set as a listener for the
+<a href="#net_event_connection"><code>&apos;connection&apos;</code></a> event</li>
+<li>Returns: <span class="type">&lt;net.Server&gt;</span></li>
+</ul>
+<p>If <code>allowHalfOpen</code> is set to <code>true</code>, when the other end of the socket
+sends a FIN packet, the server will only send a FIN packet back when
+<a href="#net_socket_end_data_encoding"><code>socket.end()</code></a> is explicitly called, until then the connection is
+half-closed (non-readable but still writable). See <a href="#net_event_end"><code>&apos;end&apos;</code></a> event
+and <a href="javascript:if(confirm('https://tools.ietf.org/html/rfc1122  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://tools.ietf.org/html/rfc1122#section-4.2.2.13'" tppabs="https://tools.ietf.org/html/rfc1122#section-4.2.2.13">RFC 1122</a> for more information.</p>
+<p>If <code>pauseOnConnect</code> is set to <code>true</code>, then the socket associated with each
+incoming connection will be paused, and no data will be read from its handle.
+This allows connections to be passed between processes without any data being
+read by the original process. To begin reading data from a paused socket, call
+<a href="#net_socket_resume"><code>socket.resume()</code></a>.</p>
+<p>The server can be a TCP server or a <a href="#net_ipc_support">IPC</a> server, depending on what it
+<a href="#net_server_listen_port_hostname_backlog_callback"><code>listen()</code></a> to.</p>
+<p>Here is an example of an TCP echo server which listens for connections
+on port 8124:</p>
+<pre><code class="lang-js">const net = require(&apos;net&apos;);
+const server = net.createServer((c) =&gt; {
+  // &apos;connection&apos; listener
+  console.log(&apos;client connected&apos;);
+  c.on(&apos;end&apos;, () =&gt; {
+    console.log(&apos;client disconnected&apos;);
+  });
+  c.write(&apos;hello\r\n&apos;);
+  c.pipe(c);
+});
+server.on(&apos;error&apos;, (err) =&gt; {
+  throw err;
+});
+server.listen(8124, () =&gt; {
+  console.log(&apos;server bound&apos;);
+});
+</code></pre>
+<p>Test this by using <code>telnet</code>:</p>
+<pre><code class="lang-console">$ telnet localhost 8124
+</code></pre>
+<p>To listen on the socket <code>/tmp/echo.sock</code> the third line from the last would
+just be changed to</p>
+<pre><code class="lang-js">server.listen(&apos;/tmp/echo.sock&apos;, () =&gt; {
+  console.log(&apos;server bound&apos;);
+});
+</code></pre>
+<p>Use <code>nc</code> to connect to a UNIX domain socket server:</p>
+<pre><code class="lang-console">$ nc -U /tmp/echo.sock
+</code></pre>
+<h2>net.isIP(input)<span><a class="mark" href="#net_net_isip_input" id="net_net_isip_input">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_isip_input" tppabs="http://nodejs.cn/api/en/net.html#net_net_isip_input">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_isip_input.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_isip_input.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_isip_input.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.0</span>
+</div><p>&#x6D4B;&#x8BD5; input &#x662F;&#x5426;&#x662F; IP &#x5730;&#x5740;&#x3002;&#x65E0;&#x6548;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5219;&#x8FD4;&#x56DE; 0&#xFF0C;IPv4 &#x5730;&#x5740;&#x5219;&#x8FD4;&#x56DE; 4&#xFF0C;IPv6&#x7684;&#x5730;&#x5740;&#x5219;&#x8FD4;&#x56DE; 6&#x3002;</p>
+<h2>net.isIPv4(input)<span><a class="mark" href="#net_net_isipv4_input" id="net_net_isipv4_input">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_isipv4_input" tppabs="http://nodejs.cn/api/en/net.html#net_net_isipv4_input">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_isipv4_input.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_isipv4_input.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_isipv4_input.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.0</span>
+</div><p>&#x5982;&#x679C; input &#x662F; IPv4 &#x5730;&#x5740;&#x5219;&#x8FD4;&#x56DE; true&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE; false&#x3002;</p>
+<h2>net.isIPv6(input)<span><a class="mark" href="#net_net_isipv6_input" id="net_net_isipv6_input">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="net-1.html#net_net_isipv6_input" tppabs="http://nodejs.cn/api/en/net.html#net_net_isipv6_input">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/net/net_isipv6_input.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/net/net_isipv6_input.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/net/net_isipv6_input.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<div class="api_metadata">
+<span>&#x65B0;&#x589E;&#x4E8E;: v0.3.0</span>
+</div><p>Returns true if input is a version 6 IP address, otherwise returns false.</p>
+
+      </div>
+    </div>
+  </div>
+  <!-- ÊêúÁ¥¢ÂºπÁ™ó -->
+  <div id="modal_search_bg"></div>
+  <div id="modal_search">
+    <input placeholder="API &#x5FEB;&#x901F;&#x641C;&#x7D22;" id="modal_search_input">
+    <div id="modal_search_result"></div>
+  </div>
+  <!-- js -->
+  <!--[if lt IE 10]><script src="placeholders.js-20170426" tppabs="http://nodejs.cn/static/lib/placeholders.js?20170426"></script><![endif]-->
+  <script src="api.js-20170607" tppabs="http://nodejs.cn/static/api.js?20170607"></script>
+</body>
+</html>

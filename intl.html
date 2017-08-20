@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>internationalization support | Node.js API &#x6587;&#x6863;</title>
+  <link rel="stylesheet" href="api.css-20170605.css" tppabs="http://nodejs.cn/static/api.css?20170605">
+  <link rel="icon" sizes="32x32" type="image/png" href="/static/favicon.png">
+</head>
+<body class="alt apidoc" id="api-section-intl">
+  <div id="content" class="clearfix">
+    <div id="column2" class="interior">
+      <div id="intro" class="interior">
+        <a href="javascript:if(confirm('http://nodejs.cn/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://nodejs.cn/'" tppabs="http://nodejs.cn/">
+          Node.js &#x4E2D;&#x6587;&#x7F51;
+        </a>
+        <div>
+          <input placeholder="API &#x5FEB;&#x901F;&#x641C;&#x7D22;" id="search_input">
+        </div>
+      </div>
+      <ul>
+<li><a class="nav-documentation" href="documentation.html" tppabs="http://nodejs.cn/api/documentation.html">&#x5173;&#x4E8E;&#x672C;&#x6587;&#x6863;</a></li>
+<li><a class="nav-synopsis" href="synopsis.html" tppabs="http://nodejs.cn/api/synopsis.html">&#x7528;&#x6CD5;&#x4E0E;&#x4F8B;&#x5B50;</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-assert" href="assert.html" tppabs="http://nodejs.cn/api/assert.html">Assert (&#x65AD;&#x8A00;)</a></li>
+<li><a class="nav-async_hooks" href="async_hooks.html" tppabs="http://nodejs.cn/api/async_hooks.html">Async Hooks (&#x5F02;&#x6B65;&#x94A9;)</a></li>
+<li><a class="nav-buffer" href="buffer.html" tppabs="http://nodejs.cn/api/buffer.html">Buffer (&#x7F13;&#x51B2;)</a></li>
+<li><a class="nav-child_process" href="child_process.html" tppabs="http://nodejs.cn/api/child_process.html">Child Processes (&#x5B50;&#x8FDB;&#x7A0B;)</a></li>
+<li><a class="nav-cluster" href="cluster.html" tppabs="http://nodejs.cn/api/cluster.html">Cluster (&#x96C6;&#x7FA4;)</a></li>
+<li><a class="nav-console" href="console.html" tppabs="http://nodejs.cn/api/console.html">Console (&#x63A7;&#x5236;&#x53F0;)</a></li>
+<li><a class="nav-crypto" href="crypto.html" tppabs="http://nodejs.cn/api/crypto.html">Crypto (&#x52A0;&#x5BC6;)</a></li>
+<li><a class="nav-dns" href="dns.html" tppabs="http://nodejs.cn/api/dns.html">DNS (&#x57DF;&#x540D;&#x670D;&#x52A1;&#x5668;)</a></li>
+<li><a class="nav-domain" href="domain.html" tppabs="http://nodejs.cn/api/domain.html">Domain (&#x57DF;)</a></li>
+<li><a class="nav-errors" href="errors.html" tppabs="http://nodejs.cn/api/errors.html">Error (&#x9519;&#x8BEF;)</a></li>
+<li><a class="nav-events" href="events.html" tppabs="http://nodejs.cn/api/events.html">Events (&#x4E8B;&#x4EF6;)</a></li>
+<li><a class="nav-fs" href="fs.html" tppabs="http://nodejs.cn/api/fs.html">File System (&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;)</a></li>
+<li><a class="nav-globals" href="globals.html" tppabs="http://nodejs.cn/api/globals.html">Global (&#x5168;&#x5C40;&#x53D8;&#x91CF;)</a></li>
+<li><a class="nav-http" href="http.html" tppabs="http://nodejs.cn/api/http.html">HTTP</a></li>
+<li><a class="nav-https" href="https.html" tppabs="http://nodejs.cn/api/https.html">HTTPS</a></li>
+<li><a class="nav-inspector" href="inspector.html" tppabs="http://nodejs.cn/api/inspector.html">Inspector</a></li>
+<li><a class="nav-modules" href="modules.html" tppabs="http://nodejs.cn/api/modules.html">Module (&#x6A21;&#x5757;)</a></li>
+<li><a class="nav-net" href="net.html" tppabs="http://nodejs.cn/api/net.html">Net (&#x7F51;&#x7EDC;)</a></li>
+<li><a class="nav-os" href="os.html" tppabs="http://nodejs.cn/api/os.html">OS (&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;)</a></li>
+<li><a class="nav-path" href="path.html" tppabs="http://nodejs.cn/api/path.html">Path (&#x8DEF;&#x5F84;)</a></li>
+<li><a class="nav-process" href="process.html" tppabs="http://nodejs.cn/api/process.html">Process (&#x8FDB;&#x7A0B;)</a></li>
+<li><a class="nav-punycode" href="punycode.html" tppabs="http://nodejs.cn/api/punycode.html">Punycode</a></li>
+<li><a class="nav-querystring" href="querystring.html" tppabs="http://nodejs.cn/api/querystring.html">Query Strings (&#x67E5;&#x8BE2;&#x5B57;&#x7B26;&#x4E32;)</a></li>
+<li><a class="nav-readline" href="readline.html" tppabs="http://nodejs.cn/api/readline.html">Readline (&#x9010;&#x884C;&#x8BFB;&#x53D6;)</a></li>
+<li><a class="nav-repl" href="repl.html" tppabs="http://nodejs.cn/api/repl.html">REPL (&#x4EA4;&#x4E92;&#x5F0F;&#x89E3;&#x91CA;&#x5668;)</a></li>
+<li><a class="nav-stream" href="stream.html" tppabs="http://nodejs.cn/api/stream.html">Stream (&#x6D41;)</a></li>
+<li><a class="nav-string_decoder" href="string_decoder.html" tppabs="http://nodejs.cn/api/string_decoder.html">String Decoder (&#x5B57;&#x7B26;&#x4E32;&#x89E3;&#x7801;&#x5668;)</a></li>
+<li><a class="nav-timers" href="timers.html" tppabs="http://nodejs.cn/api/timers.html">Timer (&#x5B9A;&#x65F6;&#x5668;)</a></li>
+<li><a class="nav-tls" href="tls.html" tppabs="http://nodejs.cn/api/tls.html">TLS (&#x5B89;&#x5168;&#x4F20;&#x8F93;&#x5C42;)</a></li>
+<li><a class="nav-tty" href="tty.html" tppabs="http://nodejs.cn/api/tty.html">TTY (&#x7EC8;&#x7AEF;)</a></li>
+<li><a class="nav-dgram" href="dgram.html" tppabs="http://nodejs.cn/api/dgram.html">UDP/Datagram (&#x6570;&#x636E;&#x62A5;)</a></li>
+<li><a class="nav-url" href="url.html" tppabs="http://nodejs.cn/api/url.html">URL</a></li>
+<li><a class="nav-util" href="util.html" tppabs="http://nodejs.cn/api/util.html">Util (&#x5B9E;&#x7528;&#x5DE5;&#x5177;)</a></li>
+<li><a class="nav-v8" href="v8.html" tppabs="http://nodejs.cn/api/v8.html">V8</a></li>
+<li><a class="nav-vm" href="vm.html" tppabs="http://nodejs.cn/api/vm.html">VM (&#x865A;&#x62DF;&#x673A;)</a></li>
+<li><a class="nav-zlib" href="zlib.html" tppabs="http://nodejs.cn/api/zlib.html">ZLIB (&#x538B;&#x7F29;)</a></li>
+</ul>
+<div class="line"></div>
+
+<ul>
+<li><a class="nav-addons" href="addons.html" tppabs="http://nodejs.cn/api/addons.html">C++ &#x63D2;&#x4EF6;</a></li>
+<li><a class="nav-n-api" href="n-api.html" tppabs="http://nodejs.cn/api/n-api.html">N-API</a></li>
+<li><a class="nav-cli" href="cli.html" tppabs="http://nodejs.cn/api/cli.html">&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;</a></li>
+<li><a class="nav-debugger" href="debugger.html" tppabs="http://nodejs.cn/api/debugger.html">debugger &#x8C03;&#x8BD5;&#x5668;</a></li>
+<li><a class="nav-intl active" href="intl.html" tppabs="http://nodejs.cn/api/intl.html">&#x56FD;&#x9645;&#x5316;</a></li>
+<li><a class="nav-tracing" href="tracing.html" tppabs="http://nodejs.cn/api/tracing.html">&#x8DDF;&#x8E2A;</a></li>
+<li><a class="nav-deprecations" href="deprecations.html" tppabs="http://nodejs.cn/api/deprecations.html">&#x5E9F;&#x5F03;&#x7684; API</a></li>
+</ul>
+
+    </div>
+
+    <div id="column1" data-id="intl" class="interior">
+      <header>
+        <h1>Node.js v8.2.1 &#x6587;&#x6863;</h1>
+        <div id="gtoc">
+          <p>
+            <a href="index.htm" tppabs="http://nodejs.cn/api/" name="toc">&#x8FD4;&#x56DE;&#x6587;&#x6863;&#x9996;&#x9875;</a>
+            <!--<a href="/api/all.html">ÂçïÈ°µÈù¢ÊòæÁ§∫</a> |-->
+            <!--<a href="/api/intl.json">JSONÊ†ºÂºè</a> |-->
+            <!--<a href="/api/en/intl.html">Êü•ÁúãËã±ÊñáÁâà</a>-->
+          </p>
+        </div>
+        <hr>
+      </header>
+
+      <div id="toc">
+        <h2>&#x76EE;&#x5F55;</h2>
+        <ul>
+<li><span class="stability_undefined"><a href="#intl_internationalization_support">Internationalization Support</a></span><ul>
+<li><span class="stability_undefined"><a href="#intl_options_for_building_node_js">Options for building Node.js</a></span><ul>
+<li><span class="stability_undefined"><a href="#intl_disable_all_internationalization_features_none">Disable all internationalization features (<code>none</code>)</a></span></li>
+<li><span class="stability_undefined"><a href="#intl_build_with_a_pre_installed_icu_system_icu">Build with a pre-installed ICU (<code>system-icu</code>)</a></span></li>
+<li><span class="stability_undefined"><a href="#intl_embed_a_limited_set_of_icu_data_small_icu">Embed a limited set of ICU data (<code>small-icu</code>)</a></span><ul>
+<li><span class="stability_undefined"><a href="#intl_providing_icu_data_at_runtime">Providing ICU data at runtime</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#intl_embed_the_entire_icu_full_icu">Embed the entire ICU (<code>full-icu</code>)</a></span></li>
+</ul>
+</li>
+<li><span class="stability_undefined"><a href="#intl_detecting_internationalization_support">Detecting internationalization support</a></span></li>
+</ul>
+</li>
+</ul>
+
+      </div>
+
+      <div id="apicontent">
+        <h1>Internationalization Support<span><a class="mark" href="#intl_internationalization_support" id="intl_internationalization_support">#</a></span></h1><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_internationalization_support" tppabs="http://nodejs.cn/api/en/intl.html#intl_internationalization_support">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/internationalization_support.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/internationalization_support.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/internationalization_support.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>Node.js has many features that make it easier to write internationalized
+programs. Some of them are:</p>
+<ul>
+<li>Locale-sensitive or Unicode-aware functions in the <a href="javascript:if(confirm('https://tc39.github.io/ecma262/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://tc39.github.io/ecma262/'" tppabs="https://tc39.github.io/ecma262/">ECMAScript Language
+Specification</a>:<ul>
+<li><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"><code>String.prototype.normalize()</code></a></li>
+<li><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase"><code>String.prototype.toLowerCase()</code></a></li>
+<li><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase"><code>String.prototype.toUpperCase()</code></a></li>
+</ul>
+</li>
+<li>All functionality described in the <a href="javascript:if(confirm('https://tc39.github.io/ecma402/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://tc39.github.io/ecma402/'" tppabs="https://tc39.github.io/ecma402/">ECMAScript Internationalization API
+Specification</a> (aka ECMA-402):<ul>
+<li><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Intl  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Intl'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Intl"><code>Intl</code></a> object</li>
+<li>Locale-sensitive methods like <a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare"><code>String.prototype.localeCompare()</code></a> and
+<a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString"><code>Date.prototype.toLocaleString()</code></a></li>
+</ul>
+</li>
+<li>The <a href="url.html#url_the_whatwg_url_api" tppabs="http://nodejs.cn/api/url.html#url_the_whatwg_url_api">WHATWG URL parser</a>&apos;s <a href="javascript:if(confirm('https://en.wikipedia.org/wiki/Internationalized_domain_name  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://en.wikipedia.org/wiki/Internationalized_domain_name'" tppabs="https://en.wikipedia.org/wiki/Internationalized_domain_name">internationalized domain names</a> (IDNs) support</li>
+<li><a href="buffer.html#buffer_buffer_transcode_source_fromenc_toenc" tppabs="http://nodejs.cn/api/buffer.html#buffer_buffer_transcode_source_fromenc_toenc"><code>require(&apos;buffer&apos;).transcode()</code></a></li>
+<li>More accurate <a href="repl.html#repl_repl" tppabs="http://nodejs.cn/api/repl.html#repl_repl">REPL</a> line editing</li>
+</ul>
+<p>Node.js (and its underlying V8 engine) uses <a href="javascript:if(confirm('http://icu-project.org/  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://icu-project.org/'" tppabs="http://icu-project.org/">ICU</a> to implement these features
+in native C/C++ code. However, some of them require a very large ICU data file
+in order to support all locales of the world. Because it is expected that most
+Node.js users will make use of only a small portion of ICU functionality, only
+a subset of the full ICU data set is provided by Node.js by default. Several
+options are provided for customizing and expanding the ICU data set either when
+building or running Node.js.</p>
+<h2>Options for building Node.js<span><a class="mark" href="#intl_options_for_building_node_js" id="intl_options_for_building_node_js">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_options_for_building_node_js" tppabs="http://nodejs.cn/api/en/intl.html#intl_options_for_building_node_js">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/options_for_building_node_js.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/options_for_building_node_js.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/options_for_building_node_js.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>To control how ICU is used in Node.js, four <code>configure</code> options are available
+during compilation. Additional details on how to compile Node.js are documented
+in <a href="javascript:if(confirm('https://github.com/nodejs/node/blob/master/BUILDING.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejs/node/blob/master/BUILDING.md'" tppabs="https://github.com/nodejs/node/blob/master/BUILDING.md">BUILDING.md</a>.</p>
+<ul>
+<li><code>--with-intl=none</code> / <code>--without-intl</code></li>
+<li><code>--with-intl=system-icu</code></li>
+<li><code>--with-intl=small-icu</code> (default)</li>
+<li><code>--with-intl=full-icu</code></li>
+</ul>
+<p>An overview of available Node.js and JavaScript features for each <code>configure</code>
+option:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><code>none</code></th>
+<th><code>system-icu</code></th>
+<th><code>small-icu</code></th>
+<th><code>full-icu</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"><code>String.prototype.normalize()</code></a></td>
+<td>none (function is no-op)</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+<tr>
+<td><code>String.prototype.to*Case()</code></td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+<tr>
+<td><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Intl  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Intl'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Intl"><code>Intl</code></a></td>
+<td>none (object does not exist)</td>
+<td>partial/full (depends on OS)</td>
+<td>partial (English-only)</td>
+<td>full</td>
+</tr>
+<tr>
+<td><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare"><code>String.prototype.localeCompare()</code></a></td>
+<td>partial (not locale-aware)</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+<tr>
+<td><code>String.prototype.toLocale*Case()</code></td>
+<td>partial (not locale-aware)</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+<tr>
+<td><a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString"><code>Number.prototype.toLocaleString()</code></a></td>
+<td>partial (not locale-aware)</td>
+<td>partial/full (depends on OS)</td>
+<td>partial (English-only)</td>
+<td>full</td>
+</tr>
+<tr>
+<td><code>Date.prototype.toLocale*String()</code></td>
+<td>partial (not locale-aware)</td>
+<td>partial/full (depends on OS)</td>
+<td>partial (English-only)</td>
+<td>full</td>
+</tr>
+<tr>
+<td><a href="url.html#url_the_whatwg_url_api" tppabs="http://nodejs.cn/api/url.html#url_the_whatwg_url_api">WHATWG URL Parser</a></td>
+<td>partial (no IDN support)</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+<tr>
+<td><a href="buffer.html#buffer_buffer_transcode_source_fromenc_toenc" tppabs="http://nodejs.cn/api/buffer.html#buffer_buffer_transcode_source_fromenc_toenc"><code>require(&apos;buffer&apos;).transcode()</code></a></td>
+<td>none (function does not exist)</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+<tr>
+<td><a href="repl.html#repl_repl" tppabs="http://nodejs.cn/api/repl.html#repl_repl">REPL</a></td>
+<td>partial (inaccurate line editing)</td>
+<td>full</td>
+<td>full</td>
+<td>full</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note</em>: The &quot;(not locale-aware)&quot; designation denotes that the function carries
+out its operation just like the non-<code>Locale</code> version of the function, if one
+exists. For example, under <code>none</code> mode, <code>Date.prototype.toLocaleString()</code>&apos;s
+operation is identical to that of <code>Date.prototype.toString()</code>.</p>
+<h3>Disable all internationalization features (<code>none</code>)<span><a class="mark" href="#intl_disable_all_internationalization_features_none" id="intl_disable_all_internationalization_features_none">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_disable_all_internationalization_features_none" tppabs="http://nodejs.cn/api/en/intl.html#intl_disable_all_internationalization_features_none">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/disable_all_internationalization_features_none.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/disable_all_internationalization_features_none.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/disable_all_internationalization_features_none.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>If this option is chosen, most internationalization features mentioned above
+will be <strong>unavailable</strong> in the resulting <code>node</code> binary.</p>
+<h3>Build with a pre-installed ICU (<code>system-icu</code>)<span><a class="mark" href="#intl_build_with_a_pre_installed_icu_system_icu" id="intl_build_with_a_pre_installed_icu_system_icu">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_build_with_a_pre_installed_icu_system_icu" tppabs="http://nodejs.cn/api/en/intl.html#intl_build_with_a_pre_installed_icu_system_icu">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/build_with_a_pre_installed_icu_system_icu.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/build_with_a_pre_installed_icu_system_icu.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/build_with_a_pre_installed_icu_system_icu.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>Node.js can link against an ICU build already installed on the system. In fact,
+most Linux distributions already come with ICU installed, and this option would
+make it possible to reuse the same set of data used by other components in the
+OS.</p>
+<p>Functionalities that only require the ICU library itself, such as
+<a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"><code>String.prototype.normalize()</code></a> and the <a href="url.html#url_the_whatwg_url_api" tppabs="http://nodejs.cn/api/url.html#url_the_whatwg_url_api">WHATWG URL parser</a>, are fully
+supported under <code>system-icu</code>. Features that require ICU locale data in
+addition, such as <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat"><code>Intl.DateTimeFormat</code></a> <em>may</em> be fully or partially
+supported, depending on the completeness of the ICU data installed on the
+system.</p>
+<h3>Embed a limited set of ICU data (<code>small-icu</code>)<span><a class="mark" href="#intl_embed_a_limited_set_of_icu_data_small_icu" id="intl_embed_a_limited_set_of_icu_data_small_icu">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_embed_a_limited_set_of_icu_data_small_icu" tppabs="http://nodejs.cn/api/en/intl.html#intl_embed_a_limited_set_of_icu_data_small_icu">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/embed_a_limited_set_of_icu_data_small_icu.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/embed_a_limited_set_of_icu_data_small_icu.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/embed_a_limited_set_of_icu_data_small_icu.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>This option makes the resulting binary link against the ICU library statically,
+and includes a subset of ICU data (typically only the English locale) within
+the <code>node</code> executable.</p>
+<p>Functionalities that only require the ICU library itself, such as
+<a href="javascript:if(confirm('https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize'" tppabs="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/normalize"><code>String.prototype.normalize()</code></a> and the <a href="url.html#url_the_whatwg_url_api" tppabs="http://nodejs.cn/api/url.html#url_the_whatwg_url_api">WHATWG URL parser</a>, are fully
+supported under <code>small-icu</code>. Features that require ICU locale data in addition,
+such as <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat"><code>Intl.DateTimeFormat</code></a>, generally only work with the English locale:</p>
+<pre><code class="lang-js">const january = new Date(9e8);
+const english = new Intl.DateTimeFormat(&apos;en&apos;, { month: &apos;long&apos; });
+const spanish = new Intl.DateTimeFormat(&apos;es&apos;, { month: &apos;long&apos; });
+
+console.log(english.format(january));
+// Prints &quot;January&quot;
+console.log(spanish.format(january));
+// Prints &quot;M01&quot; on small-icu
+// Should print &quot;enero&quot;
+</code></pre>
+<p>This mode provides a good balance between features and binary size, and it is
+the default behavior if no <code>--with-intl</code> flag is passed. The official binaries
+are also built in this mode.</p>
+<h4>Providing ICU data at runtime<span><a class="mark" href="#intl_providing_icu_data_at_runtime" id="intl_providing_icu_data_at_runtime">#</a></span></h4><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_providing_icu_data_at_runtime" tppabs="http://nodejs.cn/api/en/intl.html#intl_providing_icu_data_at_runtime">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/providing_icu_data_at_runtime.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/providing_icu_data_at_runtime.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/providing_icu_data_at_runtime.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>If the <code>small-icu</code> option is used, one can still provide additional locale data
+at runtime so that the JS methods would work for all ICU locales. Assuming the
+data file is stored at <code>/some/directory</code>, it can be made available to ICU
+through either:</p>
+<ul>
+<li><p>The <a href="cli.html#cli_node_icu_data_file" tppabs="http://nodejs.cn/api/cli.html#cli_node_icu_data_file"><code>NODE_ICU_DATA</code></a> environmental variable:</p>
+<pre><code class="lang-shell">env NODE_ICU_DATA=/some/directory node
+</code></pre>
+</li>
+<li><p>The <a href="cli.html#cli_icu_data_dir_file" tppabs="http://nodejs.cn/api/cli.html#cli_icu_data_dir_file"><code>--icu-data-dir</code></a> CLI parameter:</p>
+<pre><code class="lang-shell">node --icu-data-dir=/some/directory
+</code></pre>
+</li>
+</ul>
+<p>(If both are specified, the <code>--icu-data-dir</code> CLI parameter takes precedence.)</p>
+<p>ICU is able to automatically find and load a variety of data formats, but the
+data must be appropriate for the ICU version, and the file correctly named.
+The most common name for the data file is <code>icudt5X[bl].dat</code>, where <code>5X</code> denotes
+the intended ICU version, and <code>b</code> or <code>l</code> indicates the system&apos;s endianness.
+Check <a href="javascript:if(confirm('http://userguide.icu-project.org/icudata  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='http://userguide.icu-project.org/icudata'" tppabs="http://userguide.icu-project.org/icudata">&quot;ICU Data&quot;</a> article in the ICU User Guide for other supported formats
+and more details on ICU data in general.</p>
+<p>The <a href="javascript:if(confirm('https://www.npmjs.com/package/full-icu  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://www.npmjs.com/package/full-icu'" tppabs="https://www.npmjs.com/package/full-icu">full-icu</a> npm module can greatly simplify ICU data installation by
+detecting the ICU version of the running <code>node</code> executable and downloading the
+appropriate data file. After installing the module through <code>npm i full-icu</code>,
+the data file will be available at <code>./node_modules/full-icu</code>. This path can be
+then passed either to <code>NODE_ICU_DATA</code> or <code>--icu-data-dir</code> as shown above to
+enable full <code>Intl</code> support.</p>
+<h3>Embed the entire ICU (<code>full-icu</code>)<span><a class="mark" href="#intl_embed_the_entire_icu_full_icu" id="intl_embed_the_entire_icu_full_icu">#</a></span></h3><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_embed_the_entire_icu_full_icu" tppabs="http://nodejs.cn/api/en/intl.html#intl_embed_the_entire_icu_full_icu">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/embed_the_entire_icu_full_icu.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/embed_the_entire_icu_full_icu.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/embed_the_entire_icu_full_icu.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>This option makes the resulting binary link against ICU statically and include
+a full set of ICU data. A binary created this way has no further external
+dependencies and supports all locales, but might be rather large. See
+<a href="javascript:if(confirm('https://github.com/nodejs/node/blob/master/BUILDING.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejs/node/blob/master/BUILDING.md#build-with-full-icu-support-all-locales-supported-by-icu'" tppabs="https://github.com/nodejs/node/blob/master/BUILDING.md#build-with-full-icu-support-all-locales-supported-by-icu">BUILDING.md</a> on how to compile a binary using this mode.</p>
+<h2>Detecting internationalization support<span><a class="mark" href="#intl_detecting_internationalization_support" id="intl_detecting_internationalization_support">#</a></span></h2><p style="font-size:12px;margin-top:-1em"><a href="intl-1.html#intl_detecting_internationalization_support" tppabs="http://nodejs.cn/api/en/intl.html#intl_detecting_internationalization_support">&#x67E5;&#x770B;&#x82F1;&#x6587;&#x7248;</a> / <a rel="nofollow" target="_blank" href="javascript:if(confirm('https://github.com/nodejscn/node-api-cn/edit/master/intl/detecting_internationalization_support.md  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/nodejscn/node-api-cn/edit/master/intl/detecting_internationalization_support.md'" tppabs="https://github.com/nodejscn/node-api-cn/edit/master/intl/detecting_internationalization_support.md">&#x53C2;&#x4E0E;&#x7FFB;&#x8BD1;</a></p>
+<p>To verify that ICU is enabled at all (<code>system-icu</code>, <code>small-icu</code>, or
+<code>full-icu</code>), simply checking the existence of <code>Intl</code> should suffice:</p>
+<pre><code class="lang-js">const hasICU = typeof Intl === &apos;object&apos;;
+</code></pre>
+<p>Alternatively, checking for <code>process.versions.icu</code>, a property defined only
+when ICU is enabled, works too:</p>
+<pre><code class="lang-js">const hasICU = typeof process.versions.icu === &apos;string&apos;;
+</code></pre>
+<p>To check for support for a non-English locale (i.e. <code>full-icu</code> or
+<code>system-icu</code>), <a href="javascript:if(confirm('https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat'" tppabs="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DateTimeFormat"><code>Intl.DateTimeFormat</code></a> can be a good distinguishing factor:</p>
+<pre><code class="lang-js">const hasFullICU = (() =&gt; {
+  try {
+    const january = new Date(9e8);
+    const spanish = new Intl.DateTimeFormat(&apos;es&apos;, { month: &apos;long&apos; });
+    return spanish.format(january) === &apos;enero&apos;;
+  } catch (err) {
+    return false;
+  }
+})();
+</code></pre>
+<p>For more verbose tests for <code>Intl</code> support, the following resources may be found
+to be helpful:</p>
+<ul>
+<li><a href="javascript:if(confirm('https://github.com/srl295/btest402  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/srl295/btest402'" tppabs="https://github.com/srl295/btest402">btest402</a>: Generally used to check whether Node.js with <code>Intl</code> support is
+built correctly.</li>
+<li><a href="javascript:if(confirm('https://github.com/tc39/test262/tree/master/test/intl402  \n\n∏√Œƒº˛Œﬁ∑®”√ Teleport Ultra œ¬‘ÿ, “ÚŒ™ À¸ «“ª∏ˆ”ÚªÚ¬∑æ∂Õ‚≤ø±ª…Ë÷√Œ™À¸µƒ∆Ù ºµÿ÷∑µƒµÿ÷∑°£  \n\nƒ„œÎ‘⁄∑˛ŒÒ∆˜…œ¥Úø™À¸?'))window.location='https://github.com/tc39/test262/tree/master/test/intl402'" tppabs="https://github.com/tc39/test262/tree/master/test/intl402">Test262</a>: ECMAScript&apos;s official conformance test suite includes a section
+dedicated to ECMA-402.</li>
+</ul>
+
+      </div>
+    </div>
+  </div>
+  <!-- ÊêúÁ¥¢ÂºπÁ™ó -->
+  <div id="modal_search_bg"></div>
+  <div id="modal_search">
+    <input placeholder="API &#x5FEB;&#x901F;&#x641C;&#x7D22;" id="modal_search_input">
+    <div id="modal_search_result"></div>
+  </div>
+  <!-- js -->
+  <!--[if lt IE 10]><script src="placeholders.js-20170426" tppabs="http://nodejs.cn/static/lib/placeholders.js?20170426"></script><![endif]-->
+  <script src="api.js-20170607" tppabs="http://nodejs.cn/static/api.js?20170607"></script>
+</body>
+</html>
